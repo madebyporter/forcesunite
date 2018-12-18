@@ -1,0 +1,45 @@
+/**
+  Welcome to Variables
+**/
+
+  // Neutral Colors
+    $color-black-0:     #FCFCFC;
+    $color-black-100:   #E6E6E6;
+    $color-black-200:   #B3B3B3;
+    $color-black-300:   #595757;
+    $color-black-400:   #333333;
+    $color-black-500:   #1A1A1A;
+
+  // Blue Color
+    $color-blue-0:       #E4EEF6;
+    $color-blue-100:     #8DB7D8;
+    $color-blue-200:     #3C84BC;
+    $color-blue-300:     #1766A9;
+    $color-blue-400:     #0F5197;
+    $color-blue-500:     #222A36;
+
+  // Primary Colors
+    $color-black:       $color-black-500;
+    $color-gray:        $color-black-300;
+    $color-white:       $color-black-0;
+    $color-blue:        $color-blue-400;
+  
+  // Fonts
+    $font-primary:      'gastromond', sans-serif;
+    $font-secondary:    'proxima-nova', sans-serif;
+
+  // Media Queries
+    $mq-phonesm:        375px;
+    $mq-phonemd:        425px;
+    $mq-phonelg:        576px;
+    $mq-tablet:         768px;
+    $mq-laptop:         992px;
+    $mq-desktop:        1200px;
+    $mq-wide:           1440px;
+
+  // Spacing
+    $space-x:           1rem;
+    $space-small:       $space-x * 2; // 2rem
+    $space-medium:      $space-small * 2; // 4rem
+    $space-large:       $space-medium * 2; // 16rem
+    $space-xl:          $space-large * 2; // 32rem
