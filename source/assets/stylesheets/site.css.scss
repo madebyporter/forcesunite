@@ -4,6 +4,7 @@
 @import "variables";
 @import "mixins";
 @import "type";
+@import "system";
 
 // Global
   body {
@@ -80,6 +81,7 @@
 // Site Nav
   .site-nav {
     background: $color-white;
+    display: none;
     height: 100vh;
     left: 0;
     top: 0;
@@ -124,4 +126,48 @@
         color: $color-black-300;
       }
     }
+  }
+
+// Site Content
+  .site-content {
+    padding: 80px 0 0 0;
+    position: relative;
+    width: 100%;
+    @media only screen and (min-width: $mq-tablet) {
+      padding: 0 0 0 125px;
+    }
+  }
+
+// Site Hero
+  .site-hero {
+    background: $color-black-100;
+    padding: $space-large $space-small;
+    @media only screen and (min-width: $mq-tablet) {
+      padding: $space-xl 0;
+    }
+  }
+
+// Site Block
+  .site-block {
+    padding: $space-medium $space-small;
+    @media only screen and (min-width: $mq-tablet) {
+      padding: $space-large 0;
+    }
+  }
+  .site-block-header {
+    margin: 0 0 $space-medium;
+  }
+
+// Component - Cards
+  .card-container {
+    @include flexbox;
+    align-items: center;
+    height: 100%;
+  }
+  .card {
+    background: $color-white;
+    box-shadow: 0 20px 20px rgba(0,0,0,0.05);
+    overflow: hidden;
+    padding: $space-small;
+    width: 100%;
   }

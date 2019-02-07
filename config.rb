@@ -38,6 +38,8 @@ page '/*.txt', layout: false
 #   end
 # end
 
+activate :directory_indexes
+
 # Build-specific configuration
 configure :build do
   # Minify CSS on build

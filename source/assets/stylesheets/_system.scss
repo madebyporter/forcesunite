@@ -1,0 +1,15 @@
+// System
+
+  .system-colors-col {
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+    margin: $space-small auto 0;
+    width: 50%;
+  }
+  .system-colors-ele {
+    border-radius: 80px;
+    height: 80px;
+    margin: 0 0 $space-small;
+    width: 80px;
+  }
