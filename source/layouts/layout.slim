@@ -9,36 +9,24 @@ html
 
     == stylesheet_link_tag :site
     link rel="stylesheet" href="https://use.typekit.net/rpf2ryc.css"
-    link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"
 
   body class="#{page_classes}"
-    header.section-header data-aos="fade-down" data-aos-duration="2000" data-aos-delay="100"
-      .section-inner
-        .container-fluid
-          .row
-            .col-12.col-sm-6
-              a.logo-type href="/" Forces Unite
-            .col-12.col-sm-6
-              nav.site-nav
-                a.site-nav-link href="#about" About
-                a.site-nav-link href="#work" Work
-                a.site-nav-link href="#contact" Contact
-    == yield
-    footer.section-footer data-aos="fade-in" data-aos-duration="200" data-aos-delay="100" data-aos-offset="0"
-      .section-inner
-        .container-fluid
-          .row
-            .col-12.col-lg-6
-              | Copyright &copy; 2018
-            .col-12.col-lg-6.text-lg-right
-              | To be continued...
-    == javascript_include_tag  "aos", "all"
-    
-    // Global site tag (gtag.js) - Google Analytics
-    script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-131147424-1"
-    javascript: 
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+    header.site-header
+      .site-header-logo.site-header-ele
+        = image_tag "forces-logo-type-black.svg", :alt => "Forces Unite", :class => "site-header-logo-svg"
+      .site-header-menu-trigger.site-header-ele
+        = image_tag "icons/icon-menu.svg", :alt => "Menu Bar", :class => "site-header-menu-trigger-svg" 
+      .site-header-breadcrumbs.site-header-ele
+        .site-header-breadcrumbs-text
+          | Home
+    nav.site-nav
+      .site-nav-links
+        .site-nav-links-primary
+          = link_to "Case Studies", "/cases", :class => "site-nav-link"
+          = link_to "Talk to Us", "/contact", :class => "site-nav-link"
+        .site-nav-links-secondary
+          = link_to "Partner Solutions", "/solutions", :class => "site-nav-link"
+          = link_to "Creative Services", "/services", :class => "site-nav-link"
+          = link_to "About Us", "/about", :class => "site-nav-link"
 
-      gtag('config', 'UA-131147424-1');
+    == yield

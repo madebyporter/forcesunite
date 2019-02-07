@@ -1,5 +1,11 @@
 // _mixins.scss
 
+// Utilities
+@mixin site-rotate-neg90() {
+  @include rotate(-90);
+  transform-origin: center center;
+}
+
 // Retina
   @mixin retina-background-image($file, $type, $width, $height) {
     background-image: url($file + '.' + $type);
@@ -9,7 +15,6 @@
     }
   }
   /* Usage: @include retina-background-image("images/video", "png", 50%, 50%); */
-
 
 // Flexbox
   @mixin flexbox() {
@@ -26,7 +31,7 @@
     -ms-flex:  $values;
     flex:  $values;
   }
-  @mixin flex-wrap($values) {
+  @mixin flexwrap($values) {
     -ms-flex-wrap: $values;
     -webkit-flex-wrap: $values;
     flex-wrap: $values;
