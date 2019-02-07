@@ -10,6 +10,15 @@
   body {
     background: $color-black-10;
     height: 100%;
+    overflow-x: hidden;
+  }
+
+// Page Status
+  .menu-active {
+    overflow: hidden;
+    .site-nav {
+      display: block;
+    }
   }
 
 // Site Header
@@ -24,7 +33,7 @@
     @include flexbox;
     align-items: center;
     justify-content: space-between;
-    z-index: 1000;
+    z-index: 10000;
     @media only screen and (min-width: $mq-tablet) {
       height: 125px;
       width: 100vh;
@@ -48,6 +57,7 @@
   }
 
   .site-header-menu-trigger {
+    cursor: pointer;
     text-align: right;
     order: 2;
     width: 33.3%;
@@ -87,6 +97,7 @@
     top: 0;
     position: fixed;
     width: 100vw;
+    z-index: 1000;
     @media only screen and (min-width: $mq-tablet) {
       left: 125px;
       top: 0;
@@ -142,6 +153,7 @@
   .site-hero {
     background: $color-black-100;
     padding: $space-large $space-small;
+    position: relative;
     @media only screen and (min-width: $mq-tablet) {
       padding: $space-xl 0;
     }
@@ -166,8 +178,55 @@
   }
   .card {
     background: $color-white;
-    box-shadow: 0 20px 20px rgba(0,0,0,0.05);
+    @include box-shadow;
     overflow: hidden;
     padding: $space-small;
     width: 100%;
+  }
+
+  // Component - Screens
+  .case-screen {
+    background: $color-white;
+    border-radius: 4px 4px 2px 2px;
+    border-bottom: 5px solid $color-white;
+    overflow: hidden;
+    padding: 0 5px 10px 5px;
+    @include box-shadow;
+  }
+  .case-screen-bar {
+    height: 35px;
+    @include flexbox;
+    align-items: center;
+    padding: $space-x $space-x;
+    width: 100%;
+  }
+  .case-screen-bar-ui {
+    @include flexbox;
+  }
+  .case-screen-bar-ui-btn {
+    background: $color-black-100;
+    border-radius: 8px;
+    height: 8px;
+    margin-right: 5px;
+    width: 8px;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+  .case-screen-container {
+    height: 100%;
+    overflow: hidden;
+    width: 100%;
+  }
+  .case-screen-img {
+    width: 100%;
+  }
+  .case-screen-hero {
+    @media only screen and (min-width: $mq-tablet) {
+      height: 1200px;
+      right: -$space-x;
+      position: absolute;
+      top: $space-medium;
+      width: 650px;
+    }
   }

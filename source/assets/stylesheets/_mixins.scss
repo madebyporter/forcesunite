@@ -6,6 +6,10 @@
   transform-origin: center center;
 }
 
+@mixin box-shadow($x:0, $y:20px, $z:20px, $c:rgba(0,0,0,0.05)){
+  box-shadow: $x $y $z $c;
+}
+
 // Retina
   @mixin retina-background-image($file, $type, $width, $height) {
     background-image: url($file + '.' + $type);

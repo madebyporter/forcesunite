@@ -10,16 +10,18 @@ html
     == stylesheet_link_tag :site
     link rel="stylesheet" href="https://use.typekit.net/rpf2ryc.css"
 
+    == javascript_include_tag  "all"
+
   body class="#{page_classes}"
     header.site-header
       .site-header-logo.site-header-ele
         = image_tag "forces-logo-type-black.svg", :alt => "Forces Unite", :class => "site-header-logo-svg"
-      .site-header-menu-trigger.site-header-ele
+      #menuTrig.site-header-menu-trigger.site-header-ele
         = image_tag "icons/icon-menu.svg", :alt => "Menu Bar", :class => "site-header-menu-trigger-svg" 
       .site-header-breadcrumbs.site-header-ele
         .site-header-breadcrumbs-text
-          | Home
-    nav.site-nav
+          = current_page.data.title
+    nav#menu.site-nav
       .site-nav-links
         .site-nav-links-primary
           = link_to "Case Studies", "/cases", :class => "site-nav-link"
