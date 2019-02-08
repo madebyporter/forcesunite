@@ -15,13 +15,16 @@ html
   body class="#{page_classes}"
     header.site-header
       .site-header-logo.site-header-ele
-        = image_tag "forces-logo-type-black.svg", :alt => "Forces Unite", :class => "site-header-logo-svg"
+        = link_to "/" do
+          = image_tag "forces-logo-type-black.svg", :alt => "Forces Unite", :class => "site-header-logo-svg"
       #menuTrig.site-header-menu-trigger.site-header-ele
-        = image_tag "icons/icon-menu.svg", :alt => "Menu Bar", :class => "site-header-menu-trigger-svg" 
+        .icon-bars.site-header-menu-trigger-icon 
       .site-header-breadcrumbs.site-header-ele
         .site-header-breadcrumbs-text
           = current_page.data.title
     nav#menu.site-nav
+      #menuClose.site-nav-close
+        span &times;
       .site-nav-links
         .site-nav-links-primary
           = link_to "Case Studies", "/cases", :class => "site-nav-link"
@@ -30,5 +33,6 @@ html
           = link_to "Partner Solutions", "/solutions", :class => "site-nav-link"
           = link_to "Creative Services", "/services", :class => "site-nav-link"
           = link_to "About Us", "/about", :class => "site-nav-link"
+          = link_to "Journal", "/journal", :class => "site-nav-link"
     main.site-content
       == yield

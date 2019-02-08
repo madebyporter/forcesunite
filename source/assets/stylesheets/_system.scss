@@ -1,15 +1,52 @@
-// System
+// Icons
+  .icon-bars {
+    background: $color-black;
+    height: 4px;
+    margin: 0 auto;
+    position: relative;
+    width: 100%;
+    @include transition($type:width);
+    &:before {
+      background: $color-black;
+      content: "";
+      position: absolute;
+      height: 4px;
+      left: 0;
+      top: -7px;
+      width: 100%;
+      @include transition($type:width);
+    }
+    &:after {
+      background: $color-black;
+      content: "";
+      position: absolute;
+      height: 4px;
+      left: 0;
+      top: 7px;
+      width: 80%;
+      @include transition($type:width);
+    }
+  }
 
+// System
+  .system-colors {
+    margin: $space-medium 0;
+  }
   .system-colors-col {
-    -webkit-column-count: 2;
-    -moz-column-count: 2;
-    column-count: 2;
-    margin: $space-small auto 0;
-    width: 50%;
+    @include flexbox;
+    margin: 0 auto 0;
+    width: 70%;
+    @media only screen and (min-width: $mq-tablet) {
+      width: 100%;
+    }
   }
   .system-colors-ele {
     border-radius: 80px;
     height: 80px;
-    margin: 0 0 $space-small;
+    display: block;
+    margin: 0 $space-x 0 0;
     width: 80px;
+    &:last-child {
+      margin-right: 0;
+    }
   }

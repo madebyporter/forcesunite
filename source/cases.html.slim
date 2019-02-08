@@ -1,0 +1,33 @@
+---
+title: Cases
+---
+
+.site-block
+  .container-fluid
+    .row
+      .col-12.col-md-10.offset-md-1
+        .row
+          .col-12.col-lg-6
+            = link_to "/cases/myfdtps", :class => "card card-case", :id => "case-myfdtps" do
+              .card-case-profile
+                h2 Foundation Transportation
+              .case-screen.case-screen-desktop.case-screen-teaser
+                .case-screen-bar
+                  .case-screen-bar-ui 
+                    .case-screen-bar-ui-btn
+                    .case-screen-bar-ui-btn
+                    .case-screen-bar-ui-btn
+                .case-screen-container
+                  = image_tag "cases/img-case-myfdtps-screenhomedesktop.jpg", :alt => "MyFDTPS Homepage", :class => "case-screen-img"
+          .col-12.col-lg-6
+            = link_to "/cases/kls", :class => "card card-case", :id => "case-kls" do
+              .card-case-profile
+                h2 Keisha Lorraine Style
+              .case-screen.case-screen-desktop.case-screen-teaser
+                .case-screen-bar
+                  .case-screen-bar-ui 
+                    .case-screen-bar-ui-btn
+                    .case-screen-bar-ui-btn
+                    .case-screen-bar-ui-btn
+                .case-screen-container
+                  = image_tag "cases/img-case-kls-screenhomedesktop.jpg", :alt => "KLS Homepage", :class => "case-screen-img"
