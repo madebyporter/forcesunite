@@ -159,9 +159,13 @@
     }
   }
   .site-nav-link {
+    border: 0;
     display: block;
     @extend .t-bold;
     margin: 0 0 $space-x;
+    &:hover {
+      border: 0;
+    }
   }
   .site-nav-links-primary {
     margin: 0 0 $space-medium;
@@ -262,7 +266,7 @@
   .site-block-content {
     margin: 0 0 $space-medium;
   }
-  
+
 // Component - Cards
   .card-container {
     @include flexbox;
