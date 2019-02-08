@@ -184,8 +184,13 @@
 
   // Links
     a {
+      @extend .t-18;
+      @extend .t-bold;
+      border-bottom: 2px solid $color-black-100;
+      color: $color-black-300;
       text-decoration: none;
       &:hover {
+        border-bottom: 2px solid $color-black-200;
         text-decoration: none;
       }
     }

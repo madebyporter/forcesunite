@@ -76,8 +76,11 @@
     order: 1;
     width: 33.3%;
     position: relative;
+    a {
+      border-bottom: 0px;
+      display: block;
+    }
     @media only screen and (min-width: $mq-tablet) {
-      height: 9px;
       order: 3;
       text-align: right;
     }
@@ -256,7 +259,10 @@
   .site-block-header {
     margin: 0 0 $space-medium;
   }
-
+  .site-block-content {
+    margin: 0 0 $space-medium;
+  }
+  
 // Component - Cards
   .card-container {
     @include flexbox;
