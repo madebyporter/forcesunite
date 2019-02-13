@@ -184,14 +184,19 @@
 
   // Links
     a {
-      @extend .t-18;
-      @extend .t-bold;
-      border-bottom: 2px solid $color-black-100;
-      color: $color-black-300;
       text-decoration: none;
       &:hover {
-        border-bottom: 2px solid $color-black-200;
         text-decoration: none;
+      }
+      &.text-link {
+        border-bottom: 2px solid $color-black-100;
+        @extend .t-18;
+        @extend .t-bold;
+        color: $color-black-300;
+        &:hover {
+          border-bottom: 2px solid $color-black-200;
+          text-decoration: none;
+        }
       }
     }
 
@@ -199,6 +204,7 @@
     p {
       @extend .t-24;
       @extend .t-small;
+      color: $color-black-300;
     }
 
   // Headers
@@ -260,7 +266,7 @@
       list-style: disc;
       margin: 0 0 20px 20px;
       li {
-        // @include font-size(24);
+        @include font-size(24);
         margin-bottom: 10px;
         &:last-small {
           margin-bottom: 0;
