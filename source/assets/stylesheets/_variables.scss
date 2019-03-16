@@ -15,6 +15,9 @@
     $color-black:       $color-black-500;
     $color-gray:        $color-black-200;
     $color-white:       $color-black-0;
+
+  // Special Colors
+    $color-form-input:  darken($color-black-100,5%);
   
   // Fonts
     $font-primary:      'proxima-nova', sans-serif;  

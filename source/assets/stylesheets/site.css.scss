@@ -266,25 +266,6 @@
   .site-block-content {
     margin: 0 0 $space-medium;
   }
-
-// Component - Cards
-  .card-container {
-    @include flexbox;
-    align-items: center;
-    height: 100%;
-    min-height: 230px;
-  }
-  .card {
-    background: $color-white;
-    @include box-shadow;
-    margin: 0 0 $space-medium 0;
-    overflow: hidden;
-    padding: $space-small;
-    width: 100%;
-    @media only screen and (min-width: $mq-tablet) {
-      // margin: 0;
-    }
-  }
   .card-case {
     background: $color-black-100;
     box-shadow: 0 0 0;

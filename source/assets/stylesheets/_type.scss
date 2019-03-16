@@ -205,6 +205,7 @@
       @extend .t-24;
       @extend .t-small;
       color: $color-black-300;
+      margin: 0 0 $space-small 0;
     }
 
   // Headers
@@ -252,7 +253,7 @@
       @extend .t-16;
       @extend .t-large;
       display: block;
-      padding-top: 1rem;
+      padding-top: .3rem;
     }
   // Blockquotes
     blockquote {
@@ -262,15 +263,11 @@
     }
 
   // Lists
-    ul {
-      list-style: disc;
-      margin: 0 0 20px 20px;
-      li {
-        @include font-size(24);
-        margin-bottom: 10px;
-        &:last-small {
-          margin-bottom: 0;
-        }
+    li {
+      @extend .t-24;
+      margin-bottom: 10px;
+      &:last-small {
+        margin-bottom: 0;
       }
     }
 
