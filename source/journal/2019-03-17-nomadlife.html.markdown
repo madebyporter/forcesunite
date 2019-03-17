@@ -2,13 +2,16 @@
 
 title: Trying the Nomad Life
 author: Maryy Cho
-date: 2019-03-17 16:59 UTC
+author_slug: maryycho
+author_info: Creative Strategist | Product Designer | Marketing Enthusiast | World Traveler
+date: March 17, 2019
 tags: 
+hero_img: maryycho-nomadlife-0.jpeg
+hero_alt: Nomad Life
 
 ---
-![Nomad Life](./images/maryycho-nomadlife-0.jpeg "Nomad Life")
 
-# I’m packing up my bags and trying the nomad life
+## I’m packing up my bags and trying the nomad life
 
 > Packing up your life and leaving everything and everyone you know behind doesn’t just sound scary — it is! But it’s something I’ve wanted to do since high school and I made it my mission to do it.
 
@@ -28,7 +31,7 @@ So I made the decision to teach English in Seoul, Korea after I graduate.
 
 What happened during college? I had a boyfriend of 7 years, started freelancing in social media management and designing apps. All this made moving to a different country and leaving it all behind so hard.
 
-## So why the Nomad life??
+### So why the Nomad life??
 
 I entered my last semester of college with a head of steam — my freelancing business was doing great! I was managing accounts for clients I met with about once a month (sometimes online) — this was the moment I realized that a work/travel life was possible.
 
@@ -46,7 +49,7 @@ A few months passed and I was starting to realize the travel bug I caught wasn�
 
 ![Copenhagen](./images/maryycho-nomadlife-2.jpeg "Copenhagen")
 
-## Copenhagen……
+### Copenhagen……
 
 Copenhagen felt like home. I don’t know how to explain it but everything about this place gave me the feels.
 
@@ -58,20 +61,20 @@ The demographics here are all young entrepreneurs and guess what?! Most of them 
 
 Fast forward one year, I’m about 40 days away from my move to Copenhagen and I can’t wait! I’ve been freelancing for almost three years now, have amazing clients as friends, hired my first amazing assistant and will continue as the lead designer at Novvum.
 
-### What do I love about freelancing?
+#### What do I love about freelancing?
 
 1. The fact that I can work anywhere I wanted to in the world and still get paid
 2. Building relationships with every type of person
 3. The challenge of finding my own clients and helping them using digital solutions
 
-### Whats hard about freelancing?
+#### Whats hard about freelancing?
 
 1. Theres absolutely no stability… like at all - projects can last anywhere from 1 hour to x amount of years. You have to keep hustling to find clients, market yourself, sale your services to new clients… all of the above!
 2. I don’t have this problem yet… and I hope I won’t have this problem long term but I think not being surrounded by smart creatives will be challenging. I love collaborating and being in a team environment so not having that every couple days will be something I’ll miss.
 
 It’s quite overwhelming and time is flying by like a crazy bat but I’m more excited to start this new challenge on my own in a whole different country, meeting people from all over the world, getting lost in a new city every weekend and eating and drinking things I can’t find in Orange County. It’ll be difficult at first but everything works out if you let it. Keep an open mind and an open schedule cause anything and everything can happen! _Its going to be one wild ride!_
 
-## Thanks for reading!
+### Thanks for reading!
 
 - 📃 If you want to get more technical, read my other article to see [how I break down my UI Design Process](https://medium.com/@maryycho.business/ui-design-process-broken-down-85630fe99cea)
 - 📲 [Say hi to me on Instagram!](http://www.instagram.com/maryycho)

@@ -2,5 +2,21 @@
   .site-block
     .container-fluid
       .row
-        .col-12.col-sm-10.col-md-10.offset-md-1.col-lg-10
-          == yield
+        .col-12.col-md-10.offset-md-1
+          = image_tag "../../journal/images/#{current_page.data.hero_img}", :alt => "#{current_page.data.hero_alt}", :class => "journal-hero-img"
+      .row
+        .col-12.col-md-2.offset-md-1
+          = image_tag "people/people-#{current_page.data.author_slug}.png", :alt => "#{current_page.data.author}", :class => "journal-author-img"
+          p.journal-author-name
+            | By 
+            = current_page.data.author
+          p.journal-author-info 
+            = current_page.data.author_info
+        .col-12.col-md-6.offset-md-1
+          header.journal-post-header
+            h1.journal-post-title = current_page.data.title
+            p.journal-post-date 
+              | Article posted on  
+              = current_page.data.date
+          .journal-post-body
+            == yield
