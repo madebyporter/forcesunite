@@ -40,6 +40,13 @@ page '/*.txt', layout: false
 
 activate :directory_indexes
 
+activate :blog do |blog|
+  # set options on blog
+  blog.layout = "blog_layout"
+  blog.prefix = "journal"
+  blog.permalink = "{year}/{title}.html"
+end
+
 # Build-specific configuration
 configure :build do
   # Minify CSS on build

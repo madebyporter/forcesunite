@@ -1,3 +1,39 @@
+// Page States
+  .menu-active {
+    overflow: hidden;
+    .site-nav {
+      @include translate(0,0);
+    }
+    .site-nav-links {
+      opacity: 1;
+      @include transition($delay:600ms);
+    }
+    .site-content {
+      &:before {
+        @include transition($delay:200ms);
+        opacity: 1;
+        z-index: 10000;
+      }
+    }
+    .site-nav-close {
+      @include transition($delay:1000ms);
+      opacity: 1;
+    }
+  }
+  
+  .site-header {
+    &.short-viewport {
+      .site-header-logo, .site-header-breadcrumbs {
+        opacity: 0;
+      }
+    }
+    &.medium-viewport {
+      .site-header-breadcrumbs {
+        opacity: 0;
+      }
+    }
+  }
+
 // Spacing
   .mb-2 {
     margin-bottom: $space-small;
@@ -256,4 +292,72 @@
   }
   .card-basic {
     padding: $space-large;
+  }
+  
+  // Component - Screens
+  .screen {
+    background: $color-white;
+    border-radius: 4px 4px 2px 2px;
+    border-bottom: 5px solid $color-white;
+    overflow: hidden;
+    padding: 0 5px 10px 5px;
+    @include box-shadow;
+  }
+  .screen-bar {
+    height: 35px;
+    @include flexbox;
+    align-items: center;
+    padding: $space-x $space-x;
+    width: 100%;
+  }
+  .screen-bar-ui {
+    @include flexbox;
+  }
+  .screen-bar-ui-btn {
+    background: $color-black-100;
+    border-radius: 8px;
+    height: 8px;
+    margin-right: 5px;
+    width: 8px;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+  .screen-container {
+    height: 100%;
+    overflow: hidden;
+    width: 100%;
+  }
+  .screen-img {
+    width: 100%;
+  }
+  .screen-hero {
+    // height: 300px;
+    margin: $space-medium auto 0;
+    width: 100%;
+    @media only screen and (min-width: $mq-tablet) {
+      width: 80%;
+    }
+    @media only screen and (min-width: $mq-desktop) {
+      height: 1200px;
+      margin: 0;
+      right: -$space-x;
+      position: absolute;
+      top: $space-medium;
+      width: 650px;
+    }
+  }
+  .screen-teaser {
+    position: absolute;
+    right: -$space-small;
+    bottom: -$space-small;
+    top: $space-medium;
+    height: 80vh;
+    width: 80%;
+    @include transition($type:transform);
+    @include translate(0,0);
+    @media only screen and (min-width: $mq-tablet) {
+      height: 80vh;
+      width: 80%;
+    }
   }

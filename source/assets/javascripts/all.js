@@ -8,6 +8,7 @@ js.main = {
   init: function () {
     this.externalLinks();
     this.menu();
+    this.smallHeightCSS();
   },
   externalLinks: function() {
     function externalLinks() {
@@ -52,6 +53,40 @@ js.main = {
         body.classList.remove('menu-trans-out');
       }, 0);
     }
+  },
+  smallHeightCSS: function() {
+    var header = document.querySelector('.site-header');
+
+    // Define our viewportWidth variable
+    var viewportHeight;
+
+    // Set/update the viewportWidth value
+    var setViewportHeight = function () {
+      viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+    }
+
+    // Log the viewport width into the console
+    var logHeight = function () {
+      if (viewportHeight < 350) {
+        header.classList.add('short-viewport');
+      } else if (viewportHeight < 650){
+        header.classList.remove('short-viewport');
+        header.classList.add('medium-viewport');
+      } else {
+        header.classList.remove('short-viewport');
+        header.classList.remove('medium-viewport');
+      }
+    }
+
+    // Set our initial width and log it
+    setViewportHeight();
+    logHeight();
+
+    // On resize events, recalculate and log
+    window.addEventListener('resize', function () {
+      setViewportHeight();
+      logHeight();
+    }, false);
   }
 };
 document.addEventListener('DOMContentLoaded', function(){

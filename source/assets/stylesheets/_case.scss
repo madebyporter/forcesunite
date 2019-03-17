@@ -1,0 +1,95 @@
+// Case
+  .site-hero-header--case {
+    line-height: 1.1;
+  }
+
+  .card-case {
+    background: $color-black-100;
+    box-shadow: 0 0 0;
+    cursor: pointer;
+    display: block;
+    margin: 0 0 $space-medium;
+    height: 70vh;
+    position: relative;
+    width: 100%;
+    @include transition;
+    @media only screen and (min-width: $mq-desktop) {
+      height: 80vh;
+    }
+    &:hover {
+      .card-case-profile h2 {
+        color: $color-white;
+      }
+      .screen-teaser {
+        @include translate($space-small,0);
+      }
+    }
+  }
+  .card-case-profile {
+    left: $space-small;
+    bottom: 0;
+    height: 20px;
+    // padding: $space-small;
+    position: absolute;
+    width: 100%;
+    @include rotate(-90);
+    transform-origin: left top;
+    h2 {
+      @extend .t-label;
+      @extend .t-16;
+      color: $color-black-200;
+      margin: 0;
+      @include transition;
+    }
+  }
+// Case Cards
+  #case-myfdtps {
+    &:before {
+      @media only screen and (min-width: $mq-tablet) {
+        content: "";
+        background: url('../images/cases/img-case-myfdtps-index.jpg') no-repeat center;
+        background-size: cover;
+        height: 100%;
+        opacity: 0;
+        position: absolute;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: 0;
+        @include transition;
+      }
+    }
+    &:hover {
+      @media only screen and (min-width: $mq-tablet) {
+        &:before {
+          content: "";
+          opacity: 1;
+        }
+      }
+    }
+  }
+  #case-kls {
+    &:before {
+      @media only screen and (min-width: $mq-tablet) {
+        content: "";
+        background: url('../images/cases/img-case-kls-index.jpg') no-repeat center;
+        background-size: cover;
+        height: 100%;
+        opacity: 0;
+        position: absolute;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: 0;
+        @include transition;
+      }
+    }
+    &:hover {
+      @media only screen and (min-width: $mq-tablet) {
+        &:before {
+          content: "";
+          opacity: 1;
+        }
+      }
+    }
+  }
