@@ -1,3 +1,13 @@
+// Spacing
+  .mb-2 {
+    margin-bottom: $space-small;
+  }
+  .mb-md-0 {
+    @media only screen and (min-width: $mq-tablet) {
+      margin-bottom: 0;
+    }
+  }
+
 // Buttons
   .btn {
     border: 0;
@@ -164,9 +174,15 @@
     padding: $space-x $space-x;
     width: 100%;
     @include transition;
+    &:hover {
+      box-shadow: inset 0 -20px 0 darken($color-form-input,5%);
+    }
     &:focus {
       box-shadow: inset 0 -25px 0 $color-form-input;
       padding: $space-x $space-small;
+      &:hover {
+        box-shadow: inset 0 -25px 0 darken($color-form-input,5%);
+      }
     }
   }
   .form-input--checkbox-wrap {

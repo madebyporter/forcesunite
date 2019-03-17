@@ -193,6 +193,7 @@
         @extend .t-18;
         @extend .t-bold;
         color: $color-black-300;
+        display: inline-block;
         &:hover {
           border-bottom: 2px solid $color-black-200;
           text-decoration: none;
@@ -217,12 +218,12 @@
       width: 100%;
       z-index: 1;
     }
-    h1 {
+    h1, h2, h3 {
       font-family: $font-primary;
       @extend .t-bold;
     }
 
-    h2, h3, h4, h5, h6 {
+    h4, h5, h6 {
       font-family: $font-primary;
       @extend .t-book;
     }
