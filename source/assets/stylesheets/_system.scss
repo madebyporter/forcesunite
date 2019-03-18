@@ -205,19 +205,20 @@
     box-shadow: inset 0 -20px 0 $color-form-input;
     border: 0;
     @extend .t-24;
+    @extend .t-bold;
     height: 40px;
     outline: none;
     padding: $space-x $space-x;
     width: 100%;
     @include transition;
     &:hover {
-      box-shadow: inset 0 -20px 0 darken($color-form-input,5%);
+      box-shadow: inset 0 -20px 0 darken($color-form-input,2%);
     }
     &:focus {
       box-shadow: inset 0 -25px 0 $color-form-input;
       padding: $space-x $space-small;
       &:hover {
-        box-shadow: inset 0 -25px 0 darken($color-form-input,5%);
+        box-shadow: inset 0 -25px 0 darken($color-form-input,2%);
       }
     }
   }

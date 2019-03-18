@@ -8,6 +8,8 @@ date: March 17, 2019
 tags: 
 hero_img: maryycho-nomadlife-0.jpeg
 hero_alt: Nomad Life
+teaser:  Packing up your life and leaving everything and everyone you know behind doesn’t just sound scary — it is! But it’s something I’ve wanted to do since high school and I made it my mission to do it.
+
 
 ---
 
