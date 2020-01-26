@@ -28,4 +28,4 @@ title: Journal
                       time.journal-index-date = article.date.strftime('%b %e %Y')
                       p.journal-index-summary
                         = article.data.teaser
-                      a.journal-index-link href="#{article.url}" Read more
+                      = link_to "Read more", "#{article.url}", :class => "journal-index-link cta-underline-dark"

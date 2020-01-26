@@ -4,7 +4,7 @@
   }
 
   .card-case {
-    background: $color-black-100;
+    background: lighten($color-black-400,5%);
     box-shadow: 0 0 0;
     cursor: pointer;
     display: block;

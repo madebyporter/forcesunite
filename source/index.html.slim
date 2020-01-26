@@ -2,4 +2,28 @@
 title: Home
 ---
 
-= link_to "MyFDTPS", "/cases/myfdtps"
+.site-block
+  .container-fluid
+    .row
+      .col-12.col-md-10.offset-md-1.col-xl-8.offset-xl-2
+        .row
+          .col-12
+            header
+              h1 Designing experiences & solving digital problems.
+              p.xl We’re a group of independent experts in design, development & storytelling.
+              p.large We are Forces Unite.
+        .row
+          .col-12.col-md-6
+            .card-container
+              .card.card-teaser style="background:url('assets/images/home/card-bg-cases.jpg') no-repeat center; background-size: cover"
+                .card-content
+                  h2 Featured Cases
+                  p Review curated pieces from our collective.
+                  = link_to "View Case Studies", "cases", :class => "cta-underline"
+          .col-12.col-md-6
+            .card-container
+              .card.card-teaser style="background:url('assets/images/home/card-bg-resources.jpg') no-repeat center; background-size: cover"
+                .card-content
+                  h2 Resources
+                  p The latest resources for creative entrepreneurs.
+                  = link_to "Coming Soon", "#", :class => "cta-underline"

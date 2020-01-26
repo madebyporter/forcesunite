@@ -15,12 +15,13 @@
     $color-black:       $color-black-500;
     $color-gray:        $color-black-200;
     $color-white:       $color-black-0;
+    $color-blue:        #2F80ED;
 
   // Special Colors
-    $color-form-input:  darken($color-black-100,5%);
+    $color-form-input:  darken($color-black-300,5%);
   
   // Fonts
-    $font-primary:      'proxima-nova', sans-serif;  
+    $font-primary:      'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;  
 
   // Media Queries
     $mq-phonesm:        375px;

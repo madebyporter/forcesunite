@@ -15,7 +15,8 @@
     body {
       font-family: $font-primary;
       font-size: 1em;
-      line-height: 1.4;
+      font-weight: 700;
+      line-height: 1.3;
     }
 
     .t-72 {
@@ -205,15 +206,26 @@
     p {
       @extend .t-24;
       @extend .t-small;
-      color: $color-black-300;
+      @extend .t-book;
+      color: #BFBFBF;
       margin: 0 0 $space-small 0;
+    }
+    .large {
+      @extend .t-28;
+      color: $color-black-300;
+    }
+    .xl {
+      @extend .t-36;
+      color: $color-black-200;
     }
 
   // Headers
     h1, h2, h3, h4, h5, h6 {
+      color: $color-white;
       display: inline-block;
       @extend .t-small;
       margin-left: -0.055em;
+      margin-bottom: $space-small;
       position: relative;
       width: 100%;
       z-index: 1;
@@ -241,9 +253,15 @@
     }
 
     h4 {
-      @extend .t-28;
+      @extend .t-24;
     }
 
+    .subheader {
+      color: $color-black-200;
+      @extend .t-bold;
+      @extend .t-14;
+    }
+    
     // p + h1, p + h2, p + h3, p + h4, p + h5, p + h6 {
     //   margin-top: $space-medium;
     // }
@@ -251,7 +269,7 @@
   // Label
     label {
       @extend .t-label;
-      @extend .t-16;
+      @extend .t-12;
       @extend .t-large;
       display: block;
       padding-top: .3rem;

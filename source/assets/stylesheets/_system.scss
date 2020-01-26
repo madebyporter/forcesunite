@@ -20,7 +20,7 @@
       opacity: 1;
     }
   }
-  
+
   .site-header {
     &.short-viewport {
       .site-header-logo, .site-header-breadcrumbs {
@@ -44,6 +44,11 @@
     }
   }
 
+// Header
+  header {
+    margin: 0 0 $space-large 0;  
+  }
+
 // Buttons
   .btn {
     border: 0;
@@ -53,22 +58,63 @@
   }
   .btn-primary {
     @extend .btn;
-    background: $color-black;
-    color: $color-white;
+    background: $color-white;
+    color: $color-black-400;
     &:hover {
-      background: $color-black-400;
+      background: $color-blue;
+      color: $color-white;
     }
   }
+
+// CTAs
+  .cta-underline {
+    @extend .t-24;
+    color: $color-white;
+    display: inline-block;
+    position: relative;
+    z-index: 2;
+    &:before {
+      background: $color-blue;
+      bottom: 0;
+      content:"";
+      height: 40%;
+      left: -5px;
+      position: absolute;
+      width: 105%;
+      z-index: -1;
+      @include transition;
+    }
+    &:hover {
+      &:before {
+        height: 100%;
+        width: 105%;
+      }
+    }
+  }
+  .cta-underline-dark {
+    @extend .cta-underline;
+    color: $color-blue;
+    &:before {
+      background: $color-black-100;
+    }
+    &:hover {
+      color: $color-white;
+      &:before {
+        background: $color-blue;
+      }
+    }
+  }
+
 // Icons
   .icon-bars {
-    background: $color-black;
+    background: $color-white;
     height: 4px;
     margin: 0 auto;
     position: relative;
     width: 100%;
     @include transition($type:width);
     &:before {
-      background: $color-black;
+      background: $color-white;
       content: "";
       position: absolute;
       height: 4px;
@@ -78,7 +124,7 @@
       @include transition($type:width);
     }
     &:after {
-      background: $color-black;
+      background: $color-white;
       content: "";
       position: absolute;
       height: 4px;
@@ -99,7 +145,8 @@
     padding: 0 0 0 0;
   }
   li {
-    color: $color-black-300;
+    color: $color-black-100;
+    @extend .t-book;
   }
   .list {
     list-style: none;
@@ -122,6 +169,11 @@
         position: absolute;
       }
     }
+  }
+
+// Labels
+  label {
+    color: $color-black-200;
   }
 
 // Grid
@@ -169,6 +221,7 @@
   .grid-ele-img {
     @include absolute-center;
   }
+
 // System
   .system-colors {
     margin: $space-medium 0;
@@ -198,12 +251,14 @@
     margin: 0 0 $space-medium;
   }
   .form-label {
+    color: $color-black-200;
     padding: 0 0 0 $space-x;
   }
   .form-input--text {
     background: transparent;
     box-shadow: inset 0 -20px 0 $color-form-input;
     border: 0;
+    color: $color-black-100;
     @extend .t-24;
     @extend .t-bold;
     height: 40px;
@@ -212,13 +267,13 @@
     width: 100%;
     @include transition;
     &:hover {
-      box-shadow: inset 0 -20px 0 darken($color-form-input,2%);
+      box-shadow: inset 0 -20px 0 lighten($color-form-input,2%);
     }
     &:focus {
       box-shadow: inset 0 -25px 0 $color-form-input;
       padding: $space-x $space-small;
       &:hover {
-        box-shadow: inset 0 -25px 0 darken($color-form-input,2%);
+        box-shadow: inset 0 -25px 0 lighten($color-form-input,2%);
       }
     }
   }
@@ -240,30 +295,37 @@
     @include transition;
     &:checked {
       box-shadow: inset 4px 4px 0 $color-form-input, inset -4px -4px 0 $color-form-input;
-      background: $color-black-200;
+      background: $color-blue;
     }
     &:hover {
       box-shadow: inset 4px 4px 0 $color-form-input, inset -4px -4px 0 $color-form-input;
-      background: darken($color-form-input,10%);
+      background: lighten($color-form-input,10%);
       &:checked {
         box-shadow: inset 4px 4px 0 $color-form-input, inset -4px -4px 0 $color-form-input;
-        background: $color-black-200;
+        background: $color-blue;
       }
     }
   }
   .form-input--checkbox-label {
+    color: $color-black-200;
     @extend .t-24;
     margin: 0 0 0 $space-small;
-    font-weight: 300;
+    @extend .t-bold;
     text-indent: 0;
     text-transform: none;
     letter-spacing: 0;
     @include transition;
+    &:hover {
+      color: $color-black-100;
+    }
   }
   .form-textarea {
     background: $color-form-input;
     border: 0;
-    @extend .t-24;
+    color: $color-black-100;
+    @extend .t-18;
+    @extend .t-book;
+    line-height: 1.5;
     height: 200px;
     outline: none;
     padding: $space-small;
@@ -281,7 +343,7 @@
     min-height: 230px;
   }
   .card {
-    background: $color-white;
+    background: lighten($color-black-400,2.5%);
     @include box-shadow;
     margin: 0 0 $space-medium 0;
     overflow: hidden;
@@ -291,18 +353,55 @@
       // margin: 0;
     }
   }
+  .card-white {
+    background: $color-black-100;
+  }
+  .card-teaser {
+    height: 520px;
+    padding: $space-medium;
+    @include flexbox;
+    align-items: flex-end;
+
+    h1, h2, h3 {
+      color: $color-white;
+    }
+    p {
+      color: #E3E3E3;
+    }
+  }
+
   .card-basic {
     padding: $space-large;
   }
   
   // Component - Screens
   .screen {
-    background: $color-white;
+    background: lighten($color-black-400,2.5%);
     border-radius: 4px 4px 2px 2px;
-    border-bottom: 5px solid $color-white;
+    border-bottom: 5px solid lighten($color-black-400,2.5%);
     overflow: hidden;
     padding: 0 5px 10px 5px;
     @include box-shadow;
+    @include transition;
+    @include scale(1);
+    &:hover {
+      background: lighten($color-black-400,3.5%);
+      border-bottom: 5px solid lighten($color-black-400,3.5%);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+      @include scale(1.005);
+      .screen-bar-ui-btn {
+        background: $color-black-100;
+        &:nth-child(1){
+          background: #FC5C56;
+        }
+        &:nth-child(2){
+          background: #DEC23B;
+        }
+        &:nth-child(3){
+          background: #56CCF2;
+        }
+      }
+    }
   }
   .screen-bar {
     height: 35px;
@@ -315,11 +414,20 @@
     @include flexbox;
   }
   .screen-bar-ui-btn {
-    background: $color-black-100;
+    background: $color-black-200;
     border-radius: 8px;
     height: 8px;
     margin-right: 5px;
     width: 8px;
+    &:nth-child(1){
+      @include transition($delay: 100ms);
+    }
+    &:nth-child(2){
+      @include transition($delay: 200ms);
+    }
+    &:nth-child(3){
+      @include transition($delay: 300ms);
+    }
     &:last-child {
       margin-right: 0;
     }
@@ -360,5 +468,49 @@
     @media only screen and (min-width: $mq-tablet) {
       height: 80vh;
       width: 80%;
+    }
+  }
+
+// Journal
+  .journal-index-title {
+    margin-bottom: $space-x;
+  }
+  .journal-index-summary {
+    @extend .t-book;
+    color: $color-black-200;
+  }
+  .journal-index-date {
+    color: $color-black-200;
+  }
+  .journal-index-header-desc {
+    @extend .t-normal;
+    color: $color-black-200;
+  }
+  .journal-post-title {
+    color: $color-black-400;
+  }
+  .journal-author-name {
+    color: $color-black-400;
+  }
+  .journal-author-info {
+    color: $color-black-200;
+  }
+  .journal-post-body {
+    h2, h3, h4 {
+      color: $color-black-400;
+    }
+    p, blockquote p, li {
+      color: $color-black-300;
+    }
+    p {
+      @extend .t-18;
+      line-height: 1.4;
+    }
+    a {
+      color: $color-blue;
+      @extend .t-bold;
+      &:hover {
+        color: darken($color-blue, 5%);
+      }
     }
   }

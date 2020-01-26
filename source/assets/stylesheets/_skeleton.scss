@@ -1,6 +1,6 @@
 // Site Header
   .site-header {
-    background: $color-white;
+    background: darken($color-black-400,5%);
     height: 80px;
     left: 0;
     padding: $space-small;
@@ -9,21 +9,23 @@
     width: 100%;
     @include flexbox;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: space-between;
     z-index: 10000000;
     @include transition($type:box-shadow);
     @media only screen and (min-width: $mq-tablet) {
-      box-shadow: 0 0 0 $color-white;
+      box-shadow: 0 0 0 darken($color-black-400,5%);
       height: 125px;
       width: 100vh;
       @include rotate(-90);
+      justify-content: flex-end;
       top: 100%;
       transform-origin: top left;
     }
     &:hover {
       @media only screen and (min-width: $mq-tablet) {
-        box-shadow: 0 10px 0 $color-white;
+        box-shadow: 0 10px 0 darken($color-black-400,5%);
         .site-header-menu-trigger-icon {
+          background: $color-blue;
           &:before {
             width: 80%;
           }
@@ -42,11 +44,18 @@
       border-bottom: 0px;
       display: block;
     }
+    img {
+      width: 60px;
+    }
     @media only screen and (min-width: $mq-tablet) {
       order: 3;
       text-align: right;
       width: 50%;
       @include transition;
+      img {
+        transform: rotate(90deg);
+        width: 80px;
+      }
     }
   }
   .site-header-logo-svg {
@@ -92,6 +101,7 @@
   .site-header-breadcrumbs-text {
     @extend .t-14;
     @extend .t-label;
+    color: $color-black-100;
     white-space: nowrap;
   }
 
@@ -163,18 +173,19 @@
     right: $space-small;
     z-index: 10000000;
     @include transition();
+    // transform-origin: center center;
     @media only screen and (min-width: $mq-tablet) {
       @include vertical-center;
     }
     span {
       display: block;
-      @include transition($delay:200ms);
-      @include rotate(0);
+      @include transition($delay:100ms);
+      @include scale(1);
       transform-origin: center center;
     }
     &:hover {
       span {
-        @include rotate(180);
+        @include scale(0.7);
       }
     }
   }
@@ -203,7 +214,7 @@
 
 // Site Hero
   .site-hero {
-    background: $color-black-100;
+    background: darken($color-black-400,2.5%);
     padding: $space-large $space-small;
     position: relative;
     @media only screen and (min-width: $mq-tablet) {
@@ -229,6 +240,13 @@
   }
   .site-block-header {
     margin: 0 0 $space-medium;
+    text-align: center;
+    @media only screen and (min-width: $mq-laptop) {
+      text-align: left;
+    }
+  }
+  .site-block-subheader {
+
   }
   .site-block-content {
     margin: 0 0 $space-medium;

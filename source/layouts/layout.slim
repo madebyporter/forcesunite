@@ -16,7 +16,7 @@ html
     header.site-header
       .site-header-logo.site-header-ele
         = link_to "/" do
-          = image_tag "forces-logo-type-black.svg", :alt => "Forces Unite", :class => "site-header-logo-svg"
+          = image_tag "brand/logo-forcesunite-block-white.svg", :alt => "Forces Unite", :class => "site-header-logo-svg"
       #menuTrig.site-header-menu-trigger.site-header-ele
         .icon-bars.site-header-menu-trigger-icon 
       .site-header-breadcrumbs.site-header-ele
@@ -33,5 +33,6 @@ html
           = link_to "Studio", "/studio", :class => "site-nav-link"
           = link_to "Collective", "/collective", :class => "site-nav-link"
           = link_to "Journal", "/journal", :class => "site-nav-link"
+          = link_to "Home", "/", :class => "site-nav-link"
     main.site-content
       == yield
