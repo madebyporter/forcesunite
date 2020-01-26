@@ -53,8 +53,10 @@
   .btn {
     border: 0;
     @extend .t-bold;
-    @extend .t-24;
+    @extend .t-18;
+    display: inline-block;
     padding: $space-small $space-medium;
+    @include transition;
   }
   .btn-primary {
     @extend .btn;
@@ -62,6 +64,15 @@
     color: $color-black-400;
     &:hover {
       background: $color-blue;
+      color: $color-white;
+    }
+  }
+  .btn-secondary {
+    @extend .btn;
+    background: $color-white;
+    color: $color-blue;
+    &:hover {
+      background: $color-black;
       color: $color-white;
     }
   }
@@ -80,14 +91,14 @@
       height: 40%;
       left: -5px;
       position: absolute;
-      width: 105%;
+      width: 106%;
       z-index: -1;
       @include transition;
     }
     &:hover {
       &:before {
         height: 100%;
-        width: 105%;
+        width: 106%;
       }
     }
   }
@@ -276,6 +287,9 @@
         box-shadow: inset 0 -25px 0 lighten($color-form-input,2%);
       }
     }
+  }
+  input.form-input--text::placeholder {
+    color: $color-black-200;
   }
   .form-input--checkbox-wrap {
     @include flexbox;
@@ -503,8 +517,7 @@
       color: $color-black-300;
     }
     p {
-      @extend .t-18;
-      line-height: 1.4;
+      @extend .small;
     }
     a {
       color: $color-blue;

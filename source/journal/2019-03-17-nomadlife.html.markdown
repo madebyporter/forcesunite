@@ -1,6 +1,7 @@
 ---
 
-title: Trying the Nomad Life
+title: Forces Unite Journal - Trying the Nomad Life by Maryy Cho
+pagename: Trying the Nomad Life
 author: Maryy Cho
 author_slug: maryycho
 author_info: Creative Strategist | Product Designer | Marketing Enthusiast | World Traveler

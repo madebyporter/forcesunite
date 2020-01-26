@@ -251,3 +251,9 @@
   .site-block-content {
     margin: 0 0 $space-medium;
   }
+  .site-block-cta {
+    background: $color-blue;
+    h2, h3, h4 {
+      color: darken($color-blue,30%);
+    }
+  }
