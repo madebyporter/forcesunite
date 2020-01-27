@@ -351,9 +351,34 @@
 
 // CTA Blocks
   .site-block-cta {
-    background: $color-blue;
+    background: darken($color-blue,5%);
+    box-shadow: 0 0 0 darken($color-blue,5%), 0 0 20px rgba(0,0,0,0);
+    @include transition;
+    &:hover {
+      background: $color-blue;
+      box-shadow: 0 -10px 0 $color-blue, 0 -20px 10px rgba(0,0,0,0.1);
+      h2 {
+        @include translate(5px,0);
+        color: rgba(255,255,255,0.9);
+      }
+      .btn-secondary {
+        background: rgba(255,255,255,0.8);
+        @include translate(10px,0);
+      }
+    }
     h2, h3, h4 {
+      @include translate(0,0);
+      @include transition($delay: 0ms);
       color: darken($color-blue,30%);
+    }
+    .btn-secondary {
+      background: rgba(255,255,255,0.7);
+      @include translate(0,0);
+      @include transition($delay: 200ms);
+      &:hover {
+        background: rgba(255,255,255,1);
+        color: $color-black-400;
+      }
     }
   }
 
@@ -548,6 +573,7 @@
       box-shadow: 0 0 0 darken($color-blue, 15%);
       &:hover {
         @media only screen and (min-width: $mq-tablet) {
+          background: darken($color-blue, 10%);
           box-shadow: 0 10px 0 darken($color-blue, 15%);
         }
       }
@@ -567,18 +593,18 @@
           color: $color-white;
         }
         .form-input--text {
-          box-shadow: inset 0 -20px 0 darken($color-blue, 7%);
+          box-shadow: inset 0 -20px 0 rgba(255,255,255,0.2)
         }
       }
     }
     .form-label {
-      color: lighten($color-blue, 20%);
+      color: lighten($color-blue, 30%);
       @include transition;
     }
     .form-input--text {
-      box-shadow: inset 0 -20px 0 darken($color-blue, 5%);
+      box-shadow: inset 0 -20px 0 rgba(255,255,255,0.1);
       &:focus {
-        box-shadow: inset 0 -20px 0 darken($color-blue, 7%);
+        box-shadow: inset 0 -20px 0 rgba(255,255,255,0.2);
       }
     }
     .form-input--checkbox {
@@ -594,7 +620,7 @@
         box-shadow: inset 4px 4px 0 darken($color-blue, 7%), inset -4px -4px 0 darken($color-blue, 7%);
         background: lighten($color-blue,10%);
         & + label {
-          color: lighten($color-blue,25%);
+          color: lighten($color-blue,30%);
         }
         &:checked {
           box-shadow: inset 4px 4px 0 darken($color-blue, 7%), inset -4px -4px 0 darken($color-blue, 7%);
@@ -606,10 +632,10 @@
       }
     }
     .form-input--checkbox-label {
-      color: darken($color-blue, 15%);
+      color: lighten($color-blue, 20%);
       cursor: pointer;
       &:hover {
-        color: lighten($color-blue, 25%);
+        color: lighten($color-blue, 30%);
       }
     }
     input.form-input--text::placeholder {
@@ -646,19 +672,38 @@
     align-items: center;
     justify-content: space-between;
     z-index: 10000000;
-    @include transition($type:box-shadow);
+    @include transition;
     @media only screen and (min-width: $mq-tablet) {
-      box-shadow: 0 0 0 darken($color-black-400,5%);
+      box-shadow: 0 0 0 darken($color-black-400,4%);
       height: 125px;
       width: 100vh;
       @include rotate(-90);
       justify-content: flex-end;
       top: 100%;
       transform-origin: top left;
+      .site-header-logo-svg {
+        top: 0;
+        position: relative;
+        @include transition;
+        box-shadow: 0 0 0 rgba(0,0,0,0.2);
+      }
+      .site-header-breadcrumbs-text {
+        top: 0;
+        position: relative;
+        @include transition;
+      }
     }
     &:hover {
       @media only screen and (min-width: $mq-tablet) {
-        box-shadow: 0 10px 0 darken($color-black-400,5%);
+        background: darken($color-black-400,4%);
+        box-shadow: 0 10px 0 darken($color-black-400,4%);
+        .site-header-logo-svg {
+          top: -2px;
+          box-shadow: 8px 8px 0 rgba(0,0,0,0.2);
+        }
+        .site-header-breadcrumbs-text {
+          top: -2px;
+        }
         .site-header-menu-trigger-icon {
           background: $color-blue;
           &:before {
