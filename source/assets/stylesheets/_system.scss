@@ -149,10 +149,10 @@
 // List
   ul {
     list-style: disc;
-    margin: 0 0 $space-small $space-small;
+    margin: $space-small 0 $space-small $space-small;
   }
   ol {
-    margin: 0 0 $space-small $space-small;
+    margin: $space-small 0 $space-small $space-small;
     padding: 0 0 0 0;
   }
   li {

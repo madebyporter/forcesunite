@@ -25,7 +25,7 @@ pagename: Journal
                     .journal-index-block-inner
                       h2.journal-index-title
                         a href="#{article.url}"
-                          = article.title
+                          = article.data.pagename
                       time.journal-index-date = article.date.strftime('%b %e %Y')
                       p.journal-index-summary
                         = article.data.teaser
