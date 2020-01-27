@@ -561,32 +561,43 @@
     p {
       color: darken($color-blue,20%);
     }
+    .form-fieldset {
+      &:hover {
+        .form-label {
+          color: $color-white;
+        }
+        .form-input--text {
+          box-shadow: inset 0 -20px 0 darken($color-blue, 7%);
+        }
+      }
+    }
     .form-label {
-      color: darken($color-blue, 25%);
+      color: lighten($color-blue, 20%);
+      @include transition;
     }
     .form-input--text {
       box-shadow: inset 0 -20px 0 darken($color-blue, 5%);
       &:focus {
-        box-shadow: inset 0 -20px 0 darken($color-blue, 10%);
+        box-shadow: inset 0 -20px 0 darken($color-blue, 7%);
       }
     }
     .form-input--checkbox {
-      background: darken($color-blue, 15%);
+      background: darken($color-blue, 5%);
       &:checked {
-        box-shadow: inset 4px 4px 0 darken($color-blue, 15%), inset -4px -4px 0 darken($color-blue, 15%);
+        box-shadow: inset 4px 4px 0 darken($color-blue, 7%), inset -4px -4px 0 darken($color-blue, 7%);
         background: $color-white;
         & + label {
           color: $color-white;
         }
       }
       &:hover {
-        box-shadow: inset 4px 4px 0 darken($color-blue, 15%), inset -4px -4px 0 darken($color-blue, 15%);
+        box-shadow: inset 4px 4px 0 darken($color-blue, 7%), inset -4px -4px 0 darken($color-blue, 7%);
         background: lighten($color-blue,10%);
         & + label {
           color: lighten($color-blue,25%);
         }
         &:checked {
-          box-shadow: inset 4px 4px 0 darken($color-blue, 15%), inset -4px -4px 0 darken($color-blue, 15%);
+          box-shadow: inset 4px 4px 0 darken($color-blue, 7%), inset -4px -4px 0 darken($color-blue, 7%);
           background: $color-white;
           & + label {
             color: $color-white;
@@ -606,6 +617,9 @@
     }
     .form-textarea {
       background: darken($color-blue, 5%);
+      &:hover, &:focus {
+        background: darken($color-blue, 7%);
+      }
     }
     .cta-underline {
       &:before {
