@@ -371,10 +371,14 @@
     background: $color-black-100;
   }
   .card-teaser {
-    height: 520px;
+    height: 320px;
     padding: $space-medium;
     @include flexbox;
     align-items: flex-end;
+
+    @media only screen and (min-width: $mq-laptop) {
+      height: 520px;
+    }
 
     h1, h2, h3 {
       color: $color-white;
