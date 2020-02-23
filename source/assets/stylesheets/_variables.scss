@@ -15,7 +15,34 @@
     $color-black:       $color-black-500;
     $color-gray:        $color-black-200;
     $color-white:       $color-black-0;
+
     $color-blue:        #2F80ED;
+    $color-blue-l-x1:   lighten($color-blue, 5%);
+    $color-blue-l-x2:   lighten($color-blue, 10%);
+    $color-blue-l-x3:   lighten($color-blue, 15%);
+    $color-blue-d-x1:   darken($color-blue, 5%);
+    $color-blue-d-x2:   darken($color-blue, 10%);
+    $color-blue-d-x3:   darken($color-blue, 15%);
+
+  // Transparent Colors
+    $color-tp-black-10: rgba(26,26,26,0.1);
+    $color-tp-black-20: rgba(26,26,26,0.2);
+    $color-tp-black-30: rgba(26,26,26,0.3);
+    $color-tp-black-40: rgba(26,26,26,0.4);
+    $color-tp-black-50: rgba(26,26,26,0.5);
+    $color-tp-black-60: rgba(26,26,26,0.6);
+    $color-tp-black-70: rgba(26,26,26,0.7);
+    $color-tp-black-80: rgba(26,26,26,0.8);
+    $color-tp-black-90: rgba(26,26,26,0.9);
+    $color-tp-white-10: rgba(255,255,255,0.1);
+    $color-tp-white-20: rgba(255,255,255,0.2);
+    $color-tp-white-30: rgba(255,255,255,0.3);
+    $color-tp-white-40: rgba(255,255,255,0.4);
+    $color-tp-white-50: rgba(255,255,255,0.5);
+    $color-tp-white-60: rgba(255,255,255,0.6);
+    $color-tp-white-70: rgba(255,255,255,0.7);
+    $color-tp-white-80: rgba(255,255,255,0.8);
+    $color-tp-white-90: rgba(255,255,255,0.9);
 
   // Special Colors
     $color-form-input:  darken($color-black-300,5%);

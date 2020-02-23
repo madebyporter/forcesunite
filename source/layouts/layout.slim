@@ -12,6 +12,16 @@ html
 
     == javascript_include_tag  "all"
 
+    /* Global site tag (gtag.js) - Google Analytics */
+    script async src="https://www.googletagmanager.com/gtag/js?id=UA-131147424-1"
+    javascript:
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-131147424-1');
+
+
   body class="#{page_classes}"
     header.site-header
       .site-header-logo.site-header-ele
