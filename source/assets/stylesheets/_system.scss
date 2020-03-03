@@ -356,13 +356,13 @@
     @include transition;
     &:hover {
       background: $color-blue;
-      box-shadow: 0 -10px 0 $color-blue, 0 -20px 10px rgba(0,0,0,0.1);
+      box-shadow: 0 -10px 0 $color-blue, 0 -20px 10px $color-tp-black-10;
       h2 {
         @include translate(5px,0);
-        color: rgba(255,255,255,0.9);
+        color: $color-tp-white-90;
       }
       .btn-secondary {
-        background: rgba(255,255,255,0.8);
+        background: $color-tp-white-80;
         @include translate(10px,0);
       }
     }
@@ -372,7 +372,7 @@
       color: darken($color-blue,30%);
     }
     .btn-secondary {
-      background: rgba(255,255,255,0.7);
+      background: $color-tp-white-70;
       @include translate(0,0);
       @include transition($delay: 200ms);
       &:hover {
@@ -438,7 +438,7 @@
     &:hover {
       background: lighten($color-black-400,3.5%);
       border-bottom: 5px solid lighten($color-black-400,3.5%);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+      box-shadow: 0 10px 20px $color-tp-black-20;
       @include scale(1.005);
       .screen-bar-ui-btn {
         background: $color-black-100;
@@ -577,7 +577,7 @@
       color: $color-blue;
       @extend .t-bold;
       &:hover {
-        color: darken($color-blue, 5%);
+        color: $color-blue-d-x1;
       }
     }
   }
@@ -726,17 +726,20 @@
   .theme-blue {
     background: $color-blue;
     .site-header {
-      background: darken($color-blue, 15%);
-      box-shadow: 0 0 0 darken($color-blue, 15%);
+      background: $color-blue-d-x3;
+      box-shadow: 0 0 0 $color-blue-d-x3;
       &:hover {
         @media only screen and (min-width: $mq-tablet) {
-          background: darken($color-blue, 10%);
-          box-shadow: 0 10px 0 darken($color-blue, 15%);
+          background: $color-blue-d-x2;
+          box-shadow: 0 10px 0 $color-blue-d-x3;
+          .site-header-menu-trigger-icon {
+            background: $color-blue-d-x3;
+          }
         }
       }
     }
     .site-hero {
-      background: darken($color-blue, 5%);
+      background: $color-blue-d-x1;
     }
     h1, h2, h3, h4 {
       color: darken($color-blue,30%);
@@ -750,7 +753,7 @@
           color: $color-white;
         }
         .form-input--text {
-          box-shadow: inset 0 -20px 0 rgba(255,255,255,0.2)
+          box-shadow: inset 0 -20px 0 $color-tp-white-20
         }
       }
     }
@@ -759,13 +762,13 @@
       @include transition;
     }
     .form-input--text {
-      box-shadow: inset 0 -20px 0 rgba(255,255,255,0.1);
+      box-shadow: inset 0 -20px 0 $color-tp-white-10;
       &:focus {
-        box-shadow: inset 0 -20px 0 rgba(255,255,255,0.2);
+        box-shadow: inset 0 -20px 0 $color-tp-white-20;
       }
     }
     .form-input--checkbox {
-      background: darken($color-blue, 5%);
+      background: $color-blue-d-x1;
       &:checked {
         box-shadow: inset 4px 4px 0 darken($color-blue, 7%), inset -4px -4px 0 darken($color-blue, 7%);
         background: $color-white;
@@ -799,14 +802,14 @@
       color: darken($color-blue,20%);
     }
     .form-textarea {
-      background: darken($color-blue, 5%);
+      background: $color-blue-d-x1;
       &:hover, &:focus {
         background: darken($color-blue, 7%);
       }
     }
     .cta-underline {
       &:before {
-        background: lighten($color-blue, 10%);
+        background: $color-blue-l-x2;
       }
     }
   }
@@ -842,7 +845,7 @@
         top: 0;
         position: relative;
         @include transition($type:top);
-        box-shadow: 0 0 0 rgba(0,0,0,0.2);
+        box-shadow: 0 0 0 $color-tp-black-20;
       }
       .site-header-breadcrumbs-text {
         top: 0;
@@ -856,7 +859,7 @@
         box-shadow: 0 10px 0 darken($color-black-400,4%);
         .site-header-logo-svg {
           top: -2px;
-          box-shadow: 8px 8px 0 rgba(0,0,0,0.2);
+          box-shadow: 8px 8px 0 $color-tp-black-20;
         }
         .site-header-breadcrumbs-text {
           top: -2px;
@@ -1068,7 +1071,7 @@
       color: $color-white;
     }
     p {
-      color: rgba(255,255,255,0.8);
+      color: $color-tp-white-80;
     }
   }
 
