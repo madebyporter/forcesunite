@@ -17,6 +17,7 @@
       font-size: 1em;
       font-weight: 700;
       line-height: 1.4;
+      color: $color-black-10;
     }
 
     .t-72 {
@@ -207,7 +208,7 @@
       @extend .t-24;
       @extend .t-small;
       @extend .t-book;
-      color: #BFBFBF;
+      color: $color-black-10;
       margin: 0 0 $space-small 0;
     }
     .large {
@@ -269,6 +270,14 @@
     //   margin-top: $space-medium;
     // }
   
+  // Links
+    a {
+      color: $color-blue;
+      &:hover {
+        color: $color-blue-l-x1;
+      }
+    }
+
   // Label
     label {
       @extend .t-label;
