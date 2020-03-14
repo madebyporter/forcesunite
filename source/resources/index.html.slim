@@ -1,0 +1,27 @@
+---
+title: Forces Unite, where creatives build together.
+pagename: Resources
+description: Design, business &amp; remote resources for freelancers &amp; entrepreneurs.
+---
+.site-hero.site-hero-tight
+  .container-fluid
+    .row
+      .col-12.col-sm-10.col-md-10.offset-md-1
+        header.dark-index-header
+          h1.dark-index-header-title
+            = current_page.data.pagename
+          p.dark-index-header-desc
+            = current_page.data.description
+.site-block
+  .container-fluid
+    .row
+      .col-12.col-md-10.offset-md-1.col-xl-8
+        .row
+          .col-12.col-md-6
+            .card-container
+              .card.card-teaser style="background:url('assets/images/home/card-bg-gigs.jpg') no-repeat center; background-size: cover"
+                .card-content
+                  h2 Gigs
+                  p Find quality, remote freelance gigs.
+                  = link_to "Find Gigs", "/resources/gigs", :class => "cta-underline"
+= partial "/partials/cta-connect-A"
