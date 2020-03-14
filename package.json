@@ -1,0 +1,10 @@
+{
+  "scripts": {},
+  "devDependencies": {
+
+  },
+  "dependencies": {
+    "dotenv": "^6.2.0",
+
+  }
+}

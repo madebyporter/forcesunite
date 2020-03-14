@@ -17,3 +17,5 @@ gem 'middleman-livereload'
 gem "middleman-blog", "~> 4.0"
 gem "builder", "~> 3.0"
 gem "nokogiri"
+gem "contentful_middleman"
+gem 'middleman-dotenv'
