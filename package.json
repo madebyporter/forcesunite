@@ -4,7 +4,6 @@
 
   },
   "dependencies": {
-    "dotenv": "^6.2.0",
-
+    "dotenv": "^6.2.0"
   }
 }
