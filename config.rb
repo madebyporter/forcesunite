@@ -51,8 +51,8 @@ activate :dotenv
 activate :contentful do |f|
   f.space         = { site: ENV['CONTENTFUL_SPACE_ID'] }
   f.access_token  = ENV['CONTENTFUL_ACCESS_TOKEN']
-  f.content_types = { gigs: 'gigs' }
-  f.cda_query     = { limit: 30 }
+  f.content_types = { gigs: 'gigs', apps: 'apps' }
+  # f.cda_query     = { limit: 30 }
 end
 
 # Build-specific configuration
