@@ -17,22 +17,24 @@ description: Quality Remote Freelance Gigs for Creatives &amp; Engineers.
   .container-fluid
     .row
       .col-12.col-sm-12.col-md-10.offset-md-1
-        - data.site.gigs.each do |id, gig|
-          .card-container
-            .card.card-basic
-              .row
-                .col
-                  .gig-meta
-                    span.small.gig-type #{gig.gig_post_role}
-                    span.small &nbsp;/&nbsp;
-                    span.small.gig-date = Date.parse(gig._meta.updated_at).strftime("%B %d, %Y")
-                    
-              .row
-                .col
-                  h4.gig-title
-                    | #{gig.gig_post_title}
-                    | &nbsp;by&nbsp;
-                    = link_to "#{gig.gig_post_company}", "#{gig.gig_post_company_link}"+"?utm_source=forces&utm_medium=companysite&utm_campaign=gigfeed", :class => "gig-company"
-              .row
-                .col
-                  = link_to "Apply for Gig", "#{gig.gig_post_link}"+"?utm_source=forces&utm_medium=site&utm_campaign=gigfeed", :class => "cta-underline gig-link"
+        .row
+          - data.site.gigs.each do |id, gig|
+            .col-12
+              .card-container
+                .card.card-basic
+                  .row
+                    .col
+                      .gig-meta
+                        span.small.gig-type #{gig.gig_post_role}
+                        span.small &nbsp;/&nbsp;
+                        span.small.gig-date = Date.parse(gig._meta.updated_at).strftime("%B %d, %Y")
+                        
+                  .row
+                    .col
+                      h4.gig-title
+                        | #{gig.gig_post_title}
+                        | &nbsp;by&nbsp;
+                        = link_to "#{gig.gig_post_company}", "#{gig.gig_post_company_link}"+"?utm_source=forces&utm_medium=companysite&utm_campaign=gigfeed", :class => "gig-company"
+                  .row
+                    .col
+                      = link_to "Apply for Gig", "#{gig.gig_post_link}"+"?utm_source=forces&utm_medium=site&utm_campaign=gigfeed", :class => "cta-underline gig-link"
