@@ -52,7 +52,7 @@ activate :contentful do |f|
   f.space         = { site: ENV['CONTENTFUL_SPACE_ID'] }
   f.access_token  = ENV['CONTENTFUL_ACCESS_TOKEN']
   f.content_types = { gigs: 'gigs' }
-  f.cda_query     = { limit: 30 }
+  f.cda_query     = { limit: 30, order: 'sys.createdAt' }
 end
 
 # Build-specific configuration
