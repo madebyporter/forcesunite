@@ -19,9 +19,16 @@ description: Design, business &amp; remote resources for freelancers &amp; entre
         .row
           .col-12.col-md-6
             .card-container
-              .card.card-teaser style="background:url('../assets/images/home/card-bg-gigs.jpg') no-repeat center; background-size: cover"
+              .card.card-teaser style="background:url('../assets/images/resources/card-bg-gigs.jpg') no-repeat center; background-size: cover"
                 .card-content
-                  h2 Gigs
-                  p Find quality, remote freelance gigs.
+                  h2.card-content-title Gigs
+                  p.card-content-para Find quality, remote freelance gigs.
                   = link_to "Find Gigs", "/resources/gigs", :class => "cta-underline"
+          .col-12.col-md-6
+            .card-container
+              .card.card-teaser style="background:url('../assets/images/resources/card-bg-apps.jpg') no-repeat center; background-size: cover"
+                .card-content
+                  h2.card-content-title Apps
+                  p.card-content-para Best apps for creative entrepreneurs.
+                  = link_to "Find Apps", "/resources/apps", :class => "cta-underline"
 = partial "/partials/cta-connect-A"
