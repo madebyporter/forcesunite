@@ -176,6 +176,7 @@
         content: "0" counter(my-awesome-counter);
         @extend .t-label;
         @extend .t-24;
+        color: $color-black-400;
         left: 0;
         padding-top: 2px;
         position: absolute;
@@ -586,7 +587,7 @@
   }
   .journal-index-summary {
     @extend .t-book;
-    color: $color-black-200;
+    color: $color-black-400;
   }
   .journal-index-date {
     color: $color-black-200;
@@ -602,7 +603,7 @@
     color: $color-black-400;
   }
   .journal-author-info {
-    color: $color-black-200;
+    color: $color-black-300;
   }
   .journal-post-body {
     h2, h3, h4 {
@@ -734,7 +735,6 @@
     @extend .list-numbered;
     li {
       @extend .list-ele;
-
     }
   }
 }
@@ -851,6 +851,13 @@
     .cta-underline {
       &:before {
         background: $color-blue-l-x2;
+      }
+    }
+    .form-submit {
+      @extend .btn-primary;
+      &:hover {
+        background: $color-black;
+        color: $color-white;
       }
     }
   }
