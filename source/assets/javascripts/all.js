@@ -9,6 +9,7 @@ js.main = {
     this.externalLinks();
     this.menu();
     this.smallHeightCSS();
+    this.isotopeGigs();
   },
   externalLinks: function() {
     function externalLinks() {
@@ -20,6 +21,26 @@ js.main = {
       }
     }
     externalLinks();
+  },
+  isotopeGigs: function() {
+    $grid = $('.feature-resources-gigs');
+    $grid.each(function(index, el) {
+      $(this).isotope({
+        itemSelector : '.gig-card',
+        transitionDuration: 0,
+        // stamp: '.sticky',
+        // layoutMode : 'masonry',
+        // masonry: {
+        //     gutter: 20,
+        //     isFitWidth: true
+        // },
+        getSortData: {
+          date: '[data-date]'
+        },
+        sortBy : 'date',
+        sortAscending: false
+      });
+    });
   },
   menu: function() {
     var body = document.querySelector('body');
