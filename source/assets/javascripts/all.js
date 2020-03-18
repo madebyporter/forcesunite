@@ -1,5 +1,6 @@
 //= require_tree .
 
+
 var js = js || {},
   body = document.getElementsByTagName('body')[0];
 
