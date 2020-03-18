@@ -1,0 +1,19 @@
+---
+:id: 4RuN9gKqnSLPgdAlgSS82f
+:_meta:
+  :content_type_id: apps
+  :updated_at: '2020-03-16T03:53:02+00:00'
+  :created_at: '2020-03-16T03:53:02+00:00'
+  :id: 4RuN9gKqnSLPgdAlgSS82f
+:app_image:
+  :title: Toggl
+  :description: 
+  :url: "//images.ctfassets.net/m7sw9blbp3rw/6J3i2aUznZGDCoZHwXCBqz/bd9867e91bd01a3067755ef07a272178/forces-logo-toggl.png"
+  :_meta:
+    :updated_at: '2020-03-16T03:51:57+00:00'
+    :created_at: '2020-03-16T03:51:57+00:00'
+    :id: 6J3i2aUznZGDCoZHwXCBqz
+:app_type: Productivity
+:app_title: Toggl
+:app_desc: 'Track your time using the classic method or the pomodoro technique. '
+:app_link: http://toggl.com/
