@@ -55,14 +55,22 @@
     @extend .t-bold;
     @extend .t-18;
     display: inline-block;
-    margin: 0 0 $space-small 0;
+    margin: 0;
     padding: $space-small $space-medium;
     @include transition;
     text-align: center;
     width: 100%;
-    @media only screen and (min-width: $mq-tablet) {
+    white-space: nowrap;
+    @media only screen and (min-width: $mq-phonelg) {
       margin: 0;
       width: auto;
+    }
+    & + .btn {
+      margin-top: $space-small;
+      @media only screen and (min-width: $mq-phonelg) {
+        margin-left: $space-small;
+        margin-top: 0;
+      }
     }
   }
   .btn-primary {
@@ -1177,7 +1185,23 @@
     margin-bottom: $space-x;
   }
 
-// Studio Services
+// Studio Services Shopify
+  header.site-services-header {
+    margin: 0 0 $space-medium;
+  }
+  .site-hero-img {
+    position: absolute;
+    z-index: 100;
+    width: 375px;
+    display: none;
+    @media only screen and (min-width: $mq-laptop) {
+      display: block;
+      right: -80px;
+    }
+    @media only screen and (min-width: $mq-desktop) {
+      right: 0;
+    }
+  }
   .site-services-value {
     background: url('../images/studio/services/forcesunite-value-bg.jpg') no-repeat center;
     padding: $space-small $space-x;
@@ -1214,6 +1238,110 @@
   .site-services-value-block-top {
     border-bottom: 1px solid $color-black-100;
   }
-  .site-services-value-block-bottom {
-  
+  .site-services-bg-blue {
+    background: #8CBDFF;
+
+    h2, h3, h4, p {
+      color: #1B4987
+    }
+  }
+  .site-services-shopify-block {
+    background: #73AFFF;
+    padding: $space-small;
+    @include flexbox;
+    // align-items: flex-end;
+    justify-content: flex-end;
+    flex-direction: column;
+    @include flexwrap(wrap);
+    min-height: 200px;
+    margin: 0 0 $space-small 0;
+    @media only screen and (min-width: $mq-tablet) {
+      min-height: 250px;
+    }
+  }
+  .site-services-shopify-block-letters {
+    @extend .t-64;
+    color: #1B4987;
+    width: 100%;
+  }
+  p.site-services-shopify-block-desc {
+    @extend .t-24;
+    @extend .t-bold;
+    color: $color-white;
+    margin: 0;
+  }
+  .site-services-team-block {
+    background: $color-white;
+    padding: $space-medium;
+    @include flexbox;
+    @include flexwrap(wrap);
+    flex-direction: column;
+    min-height: 330px;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto $space-medium auto;
+    @media only screen and (min-width: $mq-phonelg) {
+      // width: 60%;
+    }
+    @media only screen and (min-width: $mq-tablet) {
+      width: 100%;
+    }
+  }
+  .site-services-bg-skyblue {
+    background: #EAF3FF;
+
+    h2, h3, h4, p {
+      color: #1B4987
+    }
+  }
+  .site-services-team-block-photo {
+    height: 140px;
+    width: 140px;
+    @include flexbox;
+    @include flexwrap(wrap);
+    justify-content: center;
+    text-align: center;
+    border-radius: 120px;
+    overflow: hidden;
+    margin: 0 0 $space-small 0;
+    .site-services-team-block-photo-img {
+      width: 100%;
+    }
+  }
+  h3.site-services-team-block-name {
+    @extend .t-24;
+    color: $color-black;
+    margin: 0;
+  }
+  p.site-services-team-block-title {
+    @extend .t-16;
+    @extend .t-bold;
+    color: $color-black-300;
+  }
+  a.site-services-team-block-link, a.site-services-work-block-link {
+    @extend .t-16;
+    @extend .t-bold;
+  }
+  .site-services-white {
+    background: #FAFCFF;
+
+    h2, h3, h4, p {
+      color: $color-black;
+    }
+  }
+  .site-serices-work-block {
+    margin: 0 0 $space-large;
+  }
+  .site-serices-work-block-img {
+    width: 100%;
+    margin: 0 0 $space-small;
+  }
+  h3.site-serices-work-block-title {
+    margin: 0 0 $space-x -2px;
+  }
+  p.site-serices-work-block-subtitle {
+    color: $color-black-300;
+    @extend .t-16;
+    margin: 0;
   }
