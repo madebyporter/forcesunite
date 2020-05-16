@@ -16,9 +16,11 @@ description: Best apps for creative entrepreneurs
 .site-block
   .container-fluid
     .row
-      .col-12.col-sm-12.col-md-10.offset-md-1
+      .col-12
+        p Down for maintenance
+      / .col-12.col-sm-12.col-md-10.offset-md-1
         .row
-          - data.site.apps.each do |app|
+          - data.site.apps.each do |id, app|
             .col-12.col-lg-6
               .card-container
                 .card.card-basic
@@ -30,7 +32,7 @@ description: Best apps for creative entrepreneurs
                       header.card-content-header
                         .card-content-meta
                           .card-content-type 
-                            = app.app_type
+                            = app.app_type 
                         h4.card-content-title 
                           = app.app_title
                     .col-12
