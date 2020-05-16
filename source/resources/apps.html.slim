@@ -29,10 +29,10 @@ description: Best apps for creative entrepreneurs
                     .col-8.col-sm-10.col-md-10.col-lg-8
                       header.card-content-header
                         .card-content-meta
-                          / .card-content-type = app.app_type 
-                        / h4.card-content-title = app.app_title
+                          .card-content-type = app.app_type 
+                        h4.card-content-title = app.app_title
                       
                     .col-12
-                      / p.card-content-desc.small = app.app_desc
+                      p.card-content-desc.small = app.app_desc
                     .col-12
-                      / = link_to "View site", "#{app.app_link}"+"?utm_source=forces&utm_medium=site&utm_campaign=apps", :class => "cta-underline card-content-link"
+                      = link_to "View site", "#{app.app_link}"+"?utm_source=forces&utm_medium=site&utm_campaign=apps", :class => "cta-underline card-content-link"
