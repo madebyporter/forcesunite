@@ -45,7 +45,7 @@
     $color-tp-white-90: rgba(255,255,255,0.9);
 
   // Special Colors
-    $color-form-input:  darken($color-black-300,5%);
+    $color-form-input:  $color-tp-white-20;
   
   // Fonts
     $font-primary:      'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;  

@@ -9,6 +9,6 @@
   },
   "dependencies": {
     "dotenv": "^6.2.0",
-    "jquery": "^3.4.1"
+    "jquery": ">=3.5.0"
   }
 }

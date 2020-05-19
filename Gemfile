@@ -16,6 +16,6 @@ gem 'middleman', '>= 4.0.0'
 gem 'middleman-livereload'
 gem "middleman-blog", "~> 4.0"
 gem "builder", "~> 3.0"
-gem "nokogiri"
+gem "nokogiri", ">= 1.10.8"
 gem "contentful_middleman"
 gem 'middleman-dotenv'

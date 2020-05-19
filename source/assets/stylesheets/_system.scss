@@ -55,8 +55,23 @@
     @extend .t-bold;
     @extend .t-18;
     display: inline-block;
+    margin: 0;
     padding: $space-small $space-medium;
     @include transition;
+    text-align: center;
+    width: 100%;
+    white-space: nowrap;
+    @media only screen and (min-width: $mq-phonelg) {
+      margin: 0;
+      width: auto;
+    }
+    & + .btn {
+      margin-top: $space-small;
+      @media only screen and (min-width: $mq-phonelg) {
+        margin-left: $space-small;
+        margin-top: 0;
+      }
+    }
   }
   .btn-primary {
     @extend .btn;
@@ -74,6 +89,24 @@
     &:hover {
       background: $color-black;
       color: $color-white;
+    }
+  }
+  .btn-blue {
+    @extend .btn;
+    background: $color-blue;
+    color: $color-white;
+    &:hover {
+      background: $color-blue-d-x1;
+      color: $color-white;
+    }
+  }
+  .btn-white {
+    @extend .btn;
+    background: $color-white;
+    color: $color-black;
+    &:hover {
+      background: $color-black-100;
+      color: $color-black;
     }
   }
 
@@ -268,25 +301,22 @@
     padding: 0 0 0 $space-x;
   }
   .form-input--text {
-    background: transparent;
-    box-shadow: inset 0 -20px 0 $color-form-input;
+    background: $color-form-input;
     border: 0;
     color: $color-black-100;
-    @extend .t-24;
+    @extend .t-18;
     @extend .t-bold;
-    height: 40px;
     outline: none;
-    padding: $space-x $space-x;
+    padding: $space-small;
     width: 100%;
     @include transition;
     &:hover {
-      box-shadow: inset 0 -20px 0 lighten($color-form-input,2%);
+      background: lighten($color-form-input,2%);
     }
     &:focus {
-      box-shadow: inset 0 -25px 0 $color-form-input;
-      padding: $space-x $space-small;
+      background: lighten($color-form-input,2%);
       &:hover {
-        box-shadow: inset 0 -25px 0 lighten($color-form-input,2%);
+        background: lighten($color-form-input,2%);
       }
     }
   }
@@ -774,7 +804,7 @@
           background: $color-blue-d-x2;
           box-shadow: 0 10px 0 $color-blue-d-x3;
           .site-header-menu-trigger-icon {
-            background: $color-blue-d-x3;
+            background: $color-blue-l-x3;
           }
         }
       }
@@ -794,7 +824,7 @@
           color: $color-white;
         }
         .form-input--text {
-          box-shadow: inset 0 -20px 0 $color-tp-white-20
+          background: $color-form-input;
         }
       }
     }
@@ -803,9 +833,9 @@
       @include transition;
     }
     .form-input--text {
-      box-shadow: inset 0 -20px 0 $color-tp-white-10;
+      background: $color-form-input;
       &:focus {
-        box-shadow: inset 0 -20px 0 $color-tp-white-20;
+        background: $color-form-input;
       }
     }
     .form-input--checkbox {
@@ -819,7 +849,7 @@
       }
       &:hover {
         box-shadow: inset 4px 4px 0 darken($color-blue, 7%), inset -4px -4px 0 darken($color-blue, 7%);
-        background: lighten($color-blue,10%);
+        background: lighten($color-blue,30%);
         & + label {
           color: lighten($color-blue,30%);
         }
@@ -833,7 +863,7 @@
       }
     }
     .form-input--checkbox-label {
-      color: lighten($color-blue, 20%);
+      color: $color-white;
       cursor: pointer;
       &:hover {
         color: lighten($color-blue, 30%);
@@ -1126,7 +1156,7 @@
 
 // Site Block
   .site-block {
-    padding: $space-medium $space-small;
+    padding: $space-large $space-small;
     @media only screen and (min-width: $mq-tablet) {
       padding: $space-large 0;
     }
@@ -1145,6 +1175,11 @@
     margin: 0 0 $space-medium;
   }
 
+// Content Block
+  .block-content {
+    margin: 0 0 $space-large 0;
+  }
+
 // Gigs
   .gig-card {
     width: 100%;
@@ -1152,4 +1187,194 @@
   .gig-meta {
     color: $color-black-200;
     margin-bottom: $space-x;
+  }
+
+// Studio Services Shopify
+  header.site-services-header {
+    margin: 0 0 $space-medium;
+  }
+  .site-hero-img {
+    position: absolute;
+    z-index: 100;
+    width: 375px;
+    display: none;
+    @media only screen and (min-width: $mq-laptop) {
+      display: block;
+      right: -80px;
+    }
+    @media only screen and (min-width: $mq-desktop) {
+      right: 0;
+    }
+  }
+  .site-services-value {
+    background: url('../images/studio/services/forcesunite-value-bg.jpg') no-repeat center;
+    padding: $space-small $space-x;
+  }
+  .site-services-process {
+    position: relative;
+    &::after {
+      content: "";
+      background-image: url('../images/studio/services/forcesunite-process-bg.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      opacity: 0.1;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      position: absolute;
+      z-index: -1;   
+      @media only screen and (min-width: $mq-phonelg) {
+        background-position: 0 23rem;
+        background-size: 45% auto;
+        opacity: 1;
+      }
+      @media only screen and (min-width: $mq-tablet) {
+        background-position: 0 24rem;
+      }
+      @media only screen and (min-width: $mq-laptop) {
+        background-position: 0 26rem;
+      }
+      @media only screen and (min-width: $mq-desktop) {
+        background-position: 0 28rem;
+      }
+    }
+  }
+  .site-services-value-block {
+    background: $color-black-0;
+
+    & > * {
+      padding: $space-large;
+    }
+
+    h2, h3, h4 {
+      color: $color-black-400;
+      margin: 0;
+    }
+    p {
+      color: $color-black-400;
+    }
+  }
+  .site-services-value-block-top {
+    border-bottom: 1px solid $color-black-100;
+  }
+  .site-services-bg-blue {
+    background: #8CBDFF;
+
+    h2, h3, h4, p {
+      color: #1B4987
+    }
+  }
+  .site-services-shopify-block {
+    background: #73AFFF;
+    padding: $space-small;
+    @include flexbox;
+    // align-items: flex-end;
+    justify-content: flex-end;
+    flex-direction: column;
+    @include flexwrap(wrap);
+    min-height: 200px;
+    margin: 0 0 $space-small 0;
+    @media only screen and (min-width: $mq-tablet) {
+      min-height: 250px;
+    }
+  }
+  .site-services-shopify-block-letters {
+    @extend .t-64;
+    color: #1B4987;
+    width: 100%;
+  }
+  p.site-services-shopify-block-desc {
+    @extend .t-24;
+    @extend .t-bold;
+    color: $color-white;
+    margin: 0;
+  }
+  .site-services-team-block {
+    background: $color-white;
+    padding: $space-small;
+    @include flexbox;
+    @include flexwrap(wrap);
+    flex-direction: column;
+    height: auto;
+    min-height: 300px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto $space-medium auto;
+    @media only screen and (min-width: $mq-phonelg) {
+      width: 100%;
+      height: auto;
+    }
+    @media only screen and (min-width: $mq-laptop) {
+    }
+    @media only screen and (min-width: $mq-desktop) {
+      height: 100%;
+      padding: $space-medium;
+    }
+  }
+  .site-services-bg-skyblue {
+    background: #EAF3FF;
+
+    h2, h3, h4, p {
+      color: #1B4987
+    }
+  }
+  .site-services-team-block-photo {
+    height: 140px;
+    width: 140px;
+    @include flexbox;
+    @include flexwrap(wrap);
+    justify-content: center;
+    text-align: center;
+    border-radius: 120px;
+    overflow: hidden;
+    margin: 0 0 $space-small 0;
+    .site-services-team-block-photo-img {
+      width: 100%;
+    }
+  }
+  h3.site-services-team-block-name {
+    @extend .t-24;
+    color: $color-black;
+    margin: 0;
+  }
+  p.site-services-team-block-title {
+    @extend .t-16;
+    @extend .t-bold;
+    color: $color-black-300;
+  }
+  a.site-services-team-block-link, a.site-services-work-block-link {
+    @extend .t-16;
+    @extend .t-bold;
+  }
+  .site-services-white {
+    background: #FAFCFF;
+
+    h2, h3, h4, p {
+      color: $color-black;
+    }
+  }
+  .site-serices-work-block {
+    margin: 0 0 $space-large;
+  }
+  .site-serices-work-block-img {
+    width: 100%;
+    margin: 0 0 $space-small;
+  }
+  h3.site-serices-work-block-title {
+    margin: 0 0 $space-x -2px;
+  }
+  p.site-serices-work-block-subtitle {
+    color: $color-black-300;
+    @extend .t-16;
+    margin: 0;
+  }
+  .site-services-work-column-pullup {
+    @media only screen and (min-width: $mq-tablet) {
+      margin-top: -5rem;
+    }
+    @media only screen and (min-width: $mq-laptop) {
+      margin-top: -10rem;
+    }
   }
