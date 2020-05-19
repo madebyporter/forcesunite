@@ -211,6 +211,9 @@
       color: $color-black-200;
       margin: 0 0 $space-small 0;
     }
+    .small {
+      @extend .t-18;
+    }
     .large {
       @extend .t-28;
       color: $color-black-300;
@@ -219,8 +222,8 @@
       @extend .t-36;
       color: $color-black-200;
     }
-    .small {
-      @extend .t-18;
+    .number {
+      @extend .t-bold;
     }
 
   // Headers
@@ -263,7 +266,8 @@
     .subheader {
       color: $color-black-200;
       @extend .t-bold;
-      @extend .t-14;
+      @extend .t-18;
+      margin: 0 0 $space-x;
     }
     
     // p + h1, p + h2, p + h3, p + h4, p + h5, p + h6 {
