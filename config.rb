@@ -40,20 +40,20 @@ page '/*.txt', layout: false
 
 activate :directory_indexes
 
-activate :blog do |blog|
-  # set options on blog
-  blog.layout = "blog_layout"
-  blog.prefix = "journal"
-  blog.permalink = "{year}/{title}.html"
-end
+# activate :blog do |blog|
+#   # set options on blog
+#   blog.layout = "blog_layout"
+#   blog.prefix = "journal"
+#   blog.permalink = "{year}/{title}.html"
+# end
 
-activate :dotenv
-activate :contentful do |f|
-  f.space         = { site: ENV['CONTENTFUL_SPACE_ID'] }
-  f.access_token  = ENV['CONTENTFUL_ACCESS_TOKEN']
-  f.content_types = { gigs: 'gigs', apps: 'apps' }
-  f.cda_query     = { order: 'sys.createdAt' }
-end
+# activate :dotenv
+# activate :contentful do |f|
+#   f.space         = { site: ENV['CONTENTFUL_SPACE_ID'] }
+#   f.access_token  = ENV['CONTENTFUL_ACCESS_TOKEN']
+#   f.content_types = { gigs: 'gigs', apps: 'apps' }
+#   f.cda_query     = { order: 'sys.createdAt' }
+# end
 
 
 # Build-specific configuration
