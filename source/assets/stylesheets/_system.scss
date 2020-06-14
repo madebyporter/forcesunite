@@ -165,6 +165,7 @@
     @include flexbox;
     align-items: flex-end;
     min-height: 99vh;
+    overflow: hidden;
     z-index: 1000;
     @media only screen and (min-width: $mq-desktop) {
       align-items: center;
