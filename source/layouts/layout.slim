@@ -23,26 +23,14 @@ html
 
   body class="#{page_classes}"
     header.site-header
-      .site-header-logo.site-header-ele
-        = link_to "/" do
-          = image_tag "brand/logo-forcesunite-block-white.svg", :alt => "Forces Unite", :class => "site-header-logo-svg"
-      #menuTrig.site-header-menu-trigger.site-header-ele
-        .icon-bars.site-header-menu-trigger-icon 
-      .site-header-breadcrumbs.site-header-ele
-        .site-header-breadcrumbs-text
-          = current_page.data.pagename
-    nav#menu.site-nav
-      #menuClose.site-nav-close
-        span &times;
-      .site-nav-links
-        .site-nav-links-primary
-          = link_to "Case Studies", "/cases", :class => "site-nav-link"
-          = link_to "The Collective", "/collective", :class => "site-nav-link"
-          = link_to "The Studio", "/studio", :class => "site-nav-link"
-        .site-nav-links-secondary
-          = link_to "Front Page", "/", :class => "site-nav-link"
-          = link_to "Resources", "/resources", :class => "site-nav-link"
-          = link_to "Contact Us", "/contact", :class => "site-nav-link"
-          = link_to "Journal", "/journal", :class => "site-nav-link"
+      = link_to "/", :class => "site-header-logo" do
+        span.site-header-logo-text Forces Unite
     main.site-content
       == yield
+    footer.site-footer
+      .container-fluid
+        .row
+          .col-12.col-md-6
+            p Created by SSFN Ventures &copy; 2020
+          .col-12.col-md-6
+            p.pull-right.text-md-right Play the game like chess.

@@ -1,39 +1,13 @@
-// Page States
-  .menu-active {
-    overflow: hidden;
-    .site-nav {
-      @include translate(0,0);
-    }
-    .site-nav-links {
-      opacity: 1;
-      @include transition($delay:600ms);
-    }
-    .site-content {
-      &:before {
-        @include transition($delay:200ms);
-        opacity: 1;
-        z-index: 10000;
-      }
-    }
-    .site-nav-close {
-      @include transition($delay:1000ms);
-      opacity: 1;
-    }
+// Global
+  html {
+    scroll-behavior: smooth;
   }
-
-  .site-header {
-    &.short-viewport {
-      .site-header-logo, .site-header-breadcrumbs {
-        opacity: 0;
-      }
-    }
-    &.medium-viewport {
-      .site-header-breadcrumbs {
-        opacity: 0;
-      }
-    }
+  body {
+    background: $color-black-400;
+    height: 100%;
+    overflow-x: hidden;
   }
-
+  
 // Spacing
   .mb-2 {
     margin-bottom: $space-small;
@@ -44,978 +18,43 @@
     }
   }
 
-// Header
-  header {
-    margin: 0 0 $space-large 0;  
-  }
-
-// Buttons
-  .btn {
-    border: 0;
-    @extend .t-bold;
-    @extend .t-18;
-    display: inline-block;
-    margin: 0;
-    padding: $space-small $space-medium;
-    @include transition;
-    text-align: center;
-    width: 100%;
-    white-space: nowrap;
-    @media only screen and (min-width: $mq-phonelg) {
-      margin: 0;
-      width: auto;
-    }
-    & + .btn {
-      margin-top: $space-small;
-      @media only screen and (min-width: $mq-phonelg) {
-        margin-left: $space-small;
-        margin-top: 0;
-      }
-    }
-  }
-  .btn-primary {
-    @extend .btn;
-    background: $color-white;
-    color: $color-black-400;
-    &:hover {
-      background: $color-blue;
-      color: $color-white;
-    }
-  }
-  .btn-secondary {
-    @extend .btn;
-    background: $color-white;
-    color: $color-blue;
-    &:hover {
-      background: $color-black;
-      color: $color-white;
-    }
-  }
-  .btn-blue {
-    @extend .btn;
-    background: $color-blue;
-    color: $color-white;
-    &:hover {
-      background: $color-blue-d-x1;
-      color: $color-white;
-    }
-  }
-  .btn-white {
-    @extend .btn;
-    background: $color-white;
-    color: $color-black;
-    &:hover {
-      background: $color-black-100;
-      color: $color-black;
-    }
-  }
-
-// CTAs
-  .cta-underline {
-    @extend .t-24;
-    color: $color-white;
-    display: inline-block;
-    position: relative;
-    z-index: 2;
-    &:before {
-      background: $color-blue;
-      bottom: 0;
-      content:"";
-      height: 40%;
-      left: -5px;
-      position: absolute;
-      width: 106%;
-      z-index: -1;
-      @include transition;
-    }
-    &:hover {
-      color: $color-tp-white-90;
-      &:before {
-        height: 100%;
-        width: 106%;
-      }
-    }
-  }
-  .cta-underline-dark {
-    @extend .cta-underline;
-    color: $color-blue;
-    &:before {
-      background: $color-black-100;
-    }
-    &:hover {
-      color: $color-white;
-      &:before {
-        background: $color-blue;
-      }
-    }
-  }
-
-// Icons
-  .icon-bars {
-    background: $color-white;
-    height: 4px;
-    margin: 0 auto;
-    position: relative;
-    width: 100%;
-    @include transition($type:width);
-    &:before {
-      background: $color-white;
-      content: "";
-      position: absolute;
-      height: 4px;
-      left: 0;
-      top: -7px;
-      width: 100%;
-      @include transition($type:width);
-    }
-    &:after {
-      background: $color-white;
-      content: "";
-      position: absolute;
-      height: 4px;
-      left: 0;
-      top: 7px;
-      width: 80%;
-      @include transition($type:width);
-    }
-  }
-
-// List
-  ul {
-    list-style: disc;
-    margin: $space-small 0 $space-small $space-small;
-  }
-  ol {
-    margin: $space-small 0 $space-small $space-small;
-    padding: 0 0 0 0;
-  }
-  li {
-    color: $color-black-100;
-    @extend .t-book;
-  }
-  .list {
-    list-style: none;
-    margin-left: 0;
-    padding: 0;
-  }
-  .list-numbered {
-    counter-reset: my-awesome-counter;
-    .list-ele {
-      counter-increment: my-awesome-counter;
-      padding: 0 0 0 $space-large;
-      margin: 0 0 $space-medium 0;
-      position: relative;
-      &:before {
-        content: "0" counter(my-awesome-counter);
-        @extend .t-label;
-        @extend .t-24;
-        left: 0;
-        padding-top: 2px;
-        position: absolute;
-      }
-    }
-  }
-
-// Labels
-  label {
-    color: $color-black-200;
-  }
-
-// Grid
-  .grid {
-    border-top: 1px solid darken($color-black-100,5%);
-    border-bottom: 1px solid darken($color-black-100,5%);
-    // left: -20px;
-    position: relative;
-    // width: 113%;
-    @media only screen and (min-width: $mq-tablet) {
-      left: 0;
-      width: 100%;
-    }
-  }
-  .grid-container {
-    border-left: 1px solid darken($color-black-100,5%);
-    border-right: 1px solid darken($color-black-100,5%);
-    border-bottom: 1px solid darken($color-black-100,5%);
-    position: relative;
-    @include flexbox;
-    @include flexwrap(wrap);
-    &:last-child {
-      border-bottom: 0;
-    }
-  }
-  .grid-ele {
-    border-bottom: 1px solid darken($color-black-100,5%);
-    height: 25vh;
-    width: 100%;
-    position: relative;
-    flex-grow: 2;
-    @media only screen and (min-width: $mq-tablet) {
-      border-right: 1px solid darken($color-black-100,5%);
-      border-bottom: 0;
-      height: 25vh;
-      width: 25%;
-    }
-    &:last-child {
-      border-bottom: 0;
-      @media only screen and (min-width: $mq-tablet) {
-        border-right: 0;
-      }
-    }
-  }
-  .grid-ele-img {
-    @include absolute-center;
-  }
-
-// System
-  .system-colors {
-    margin: $space-medium 0;
-  }
-  .system-colors-col {
-    @include flexbox;
-    margin: 0 auto 0;
-    width: 70%;
-    @media only screen and (min-width: $mq-tablet) {
-      width: 100%;
-    }
-  }
-  .system-colors-ele {
-    border-radius: 80px;
-    height: 80px;
-    display: block;
-    margin: 0 $space-x 0 0;
-    width: 80px;
-    &:last-child {
-      margin-right: 0;
-    }
-  }
-
-// Forms
-  .form-fieldset {
-    border: 0;
-    margin: 0 0 $space-medium;
-  }
-  .form-label {
-    color: $color-black-200;
-    padding: 0 0 0 $space-x;
-  }
-  .form-input--text {
-    background: $color-form-input;
-    border: 0;
-    color: $color-black-100;
-    @extend .t-18;
-    @extend .t-bold;
-    outline: none;
-    padding: $space-small;
-    width: 100%;
-    @include transition;
-    &:hover {
-      background: lighten($color-form-input,2%);
-    }
-    &:focus {
-      background: lighten($color-form-input,2%);
-      &:hover {
-        background: lighten($color-form-input,2%);
-      }
-    }
-  }
-  input.form-input--text::placeholder {
-    color: $color-black-200;
-  }
-  .form-input--checkbox-wrap {
-    @include flexbox;
-    align-items: center;
-    margin: 0 0 $space-x;
-  }
-  .form-input--checkbox {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    background: $color-form-input;
-    box-shadow: inset 4px 4px 0 transparent, inset -4px -4px 0 transparent;
-    cursor: pointer;
-    height: 32px;
-    outline: none;
-    width: 32px;
-    @include transition;
-    &:checked {
-      box-shadow: inset 4px 4px 0 $color-form-input, inset -4px -4px 0 $color-form-input;
-      background: $color-blue;
-    }
-    &:hover {
-      box-shadow: inset 4px 4px 0 $color-form-input, inset -4px -4px 0 $color-form-input;
-      background: lighten($color-form-input,10%);
-      &:checked {
-        box-shadow: inset 4px 4px 0 $color-form-input, inset -4px -4px 0 $color-form-input;
-        background: $color-blue;
-      }
-    }
-  }
-  .form-input--checkbox-label {
-    color: $color-black-200;
-    @extend .t-24;
-    margin: 0 0 0 $space-small;
-    @extend .t-bold;
-    text-indent: 0;
-    text-transform: none;
-    letter-spacing: 0;
-    @include transition;
-    &:hover {
-      color: $color-black-100;
-    }
-  }
-  .form-textarea {
-    background: $color-form-input;
-    border: 0;
-    color: $color-black-100;
-    @extend .t-18;
-    @extend .t-book;
-    line-height: 1.5;
-    height: 200px;
-    outline: none;
-    padding: $space-small;
-    width: 100%;
-  }
-  .form-submit {
-    @extend .btn-primary;
-  }
-
-// CTA Blocks
-  .site-block-cta {
-    background: darken($color-blue,5%);
-    box-shadow: 0 0 0 darken($color-blue,5%), 0 0 20px rgba(0,0,0,0);
-    @include transition;
-    &:hover {
-      background: $color-blue;
-      box-shadow: 0 -10px 0 $color-blue, 0 -20px 10px $color-tp-black-10;
-      h2 {
-        @include translate(5px,0);
-        color: $color-tp-white-90;
-      }
-      .btn-secondary {
-        background: $color-tp-white-80;
-        @include translate(10px,0);
-      }
-    }
-    h2, h3, h4 {
-      @include translate(0,0);
-      @include transition($delay: 0ms);
-      color: darken($color-blue,30%);
-    }
-    .btn-secondary {
-      background: $color-tp-white-70;
-      @include translate(0,0);
-      @include transition($delay: 200ms);
-      &:hover {
-        background: rgba(255,255,255,1);
-        color: $color-black-400;
-      }
-    }
-  }
-
-// Cards
-  .card-container {
-    @include flexbox;
-    align-items: stretch;
-    height: 100%;
-    min-height: 230px;
-  }
-  .card {
-    background: lighten($color-black-400,2.5%);
-    @include box-shadow;
-    margin: 0 0 $space-medium 0;
-    overflow: hidden;
-    padding: $space-small;
-    width: 100%;
-    @include transition;
-    &:hover {
-      background: lighten($color-black-400,5%);
-    }
-  }
-  .card-white {
-    background: $color-black-100;
-  }
-  .card-teaser {
-    height: 320px;
-    padding: $space-medium;
-    @include flexbox;
-    align-items: flex-end;
-
-    @media only screen and (min-width: $mq-laptop) {
-      height: 520px;
-    }
-
-    h1, h2, h3 {
-      color: $color-white;
-    }
-    p {
-      color: #E3E3E3;
-    }
-  }
-
-  .card-basic {
-    padding: $space-medium;
-    @media only screen and (min-width: $mq-desktop) {
-      padding: $space-large;
-    }
-  }
-  .card-content-header {
-    @include flexbox;
-    flex-wrap: wrap;
-    align-content: center;
-    height: 100%;
-    margin: 0 0 $space-x;
-  }
-  .card-content-title {
-    margin: 0;
-    width: 100%;
-  }
-  .card-content-image {
-    @include flexbox;
-    flex-wrap: wrap;
-    align-content: center;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    img {
-      display: block;
-      width: 100%;
-      @media only screen and (min-width: $mq-laptop) {
-        width: 100%;
-      }
-    }  
-  }
-  .card-content-meta {
-    color: $color-black-200;
-    @extend .t-16;
-    width: 100%;
-  }
-  .card-content-desc {
-    margin: $space-small 0;
-  }
-  
-  // Component - Screens
-  .screen {
-    background: lighten($color-black-400,2.5%);
-    border-radius: 4px 4px 2px 2px;
-    border-bottom: 5px solid lighten($color-black-400,2.5%);
-    overflow: hidden;
-    padding: 0 5px 10px 5px;
-    @include box-shadow;
-    @include transition;
-    @include scale(1);
-    &:hover {
-      background: lighten($color-black-400,3.5%);
-      border-bottom: 5px solid lighten($color-black-400,3.5%);
-      box-shadow: 0 10px 20px $color-tp-black-20;
-      @include scale(1.005);
-      .screen-bar-ui-btn {
-        background: $color-black-100;
-        &:nth-child(1){
-          background: #FC5C56;
-        }
-        &:nth-child(2){
-          background: #DEC23B;
-        }
-        &:nth-child(3){
-          background: #56CCF2;
-        }
-      }
-    }
-  }
-  .screen-bar {
-    height: 35px;
-    @include flexbox;
-    align-items: center;
-    padding: $space-x $space-x;
-    width: 100%;
-  }
-  .screen-bar-ui {
-    @include flexbox;
-  }
-  .screen-bar-ui-btn {
-    background: $color-black-200;
-    border-radius: 8px;
-    height: 8px;
-    margin-right: 5px;
-    width: 8px;
-    &:nth-child(1){
-      @include transition($delay: 100ms);
-    }
-    &:nth-child(2){
-      @include transition($delay: 200ms);
-    }
-    &:nth-child(3){
-      @include transition($delay: 300ms);
-    }
-    &:last-child {
-      margin-right: 0;
-    }
-  }
-  .screen-container {
-    height: 100%;
-    overflow: hidden;
-    width: 100%;
-  }
-  .screen-img {
-    width: 100%;
-  }
-  .screen-hero {
-    // height: 300px;
-    margin: $space-medium auto 0;
-    width: 100%;
-    @media only screen and (min-width: $mq-tablet) {
-      width: 80%;
-    }
-    @media only screen and (min-width: $mq-desktop) {
-      height: 1200px;
-      margin: 0;
-      right: -$space-x;
-      position: absolute;
-      top: $space-medium;
-      width: 650px;
-    }
-  }
-  .screen-teaser {
-    position: absolute;
-    right: -$space-small;
-    bottom: -$space-small;
-    top: $space-medium;
-    height: 80vh;
-    width: 80%;
-    @include transition($type:transform);
-    @include translate(0,0);
-    @media only screen and (min-width: $mq-tablet) {
-      height: 80vh;
-      width: 80%;
-    }
-  }
-
-// Headers
-  .dark-index-header {
-    padding: $space-small 0;
-    margin: 0;
-    @media only screen and (min-width: $mq-tablet) {
-      padding: $space-medium 0;
-    }
-    .dark-index-header-title {
-      @extend .t-64;
-      color: $color-black-100;
-      line-height: 1;
-      margin: 0 0 $space-small 0;
-    }
-    .dark-index-header-desc {
-      @extend .t-normal;
-      color: $color-black-200;
-      @extend .t-24;
-    }
-  }
-// Journal
-  .journal-index-title {
-    margin-bottom: $space-x;
-  }
-  .journal-index-summary {
-    @extend .t-book;
-    color: $color-black-200;
-  }
-  .journal-index-date {
-    color: $color-black-200;
-  }
-  .journal-index-header-desc {
-    @extend .t-normal;
-    color: $color-black-200;
-  }
-  .journal-post-title {
-    color: $color-black-400;
-  }
-  .journal-author-name {
-    color: $color-black-400;
-  }
-  .journal-author-info {
-    color: $color-black-200;
-  }
-  .journal-post-body {
-    h2, h3, h4 {
-      color: $color-black-400;
-    }
-    p, blockquote p, li {
-      color: $color-black-300;
-    }
-    p {
-      @extend .small;
-    }
-    a {
-      color: $color-blue;
-      @extend .t-bold;
-      &:hover {
-        color: $color-blue-d-x1;
-      }
-    }
-  }
-  .journal .site-content {
-  img, .journal-index-image {
-    width: 100%;
-  }
-}
-.journal-index-header {
-  border-bottom: 1px solid darken($color-black-10,5%);
-  margin: 0 0 $space-large;
-  padding: $space-large 0 0 0;
-}
-.journal-index-header-title {
-  @extend .t-72;
-  color: $color-black-400;
-  line-height: 1;
-  margin: 0 0 $space-x 0;
-}
-.journal-index-header-desc {
-  @extend .t-light;
-  @extend .t-48;
-}
-.journal-index-block {
-  background: $color-black-0;
-  margin: 0 0 $space-large;
-  &:nth-child(even){
-  }
-  @media only screen and (min-width: $mq-tablet) {
-    background: transparent;
-  }
-}
-.journal-index-image {
-  @media only screen and (min-width: $mq-tablet) {
-    width: 150% !important;
-  }
-  @media only screen and (min-width: $mq-desktop) {
-    width: 120% !important;
-  }
-}
-.journal-index-block-inner {
-  background: $color-black-0;
-  padding: $space-medium * 1.5;
-  @media only screen and (min-width: $mq-tablet) {
-    @include box-shadow;
-    margin: $space-medium 0 0 0;
-  }
-  @media only screen and (min-width: $mq-desktop) {
-    margin: $space-large 0 0 0;
-  }
-}
-.journal-index-title a {
-  color: $color-black-400;
-}
-.journal-index-date {
-  @extend .t-label;
-  @extend .t-14;
-  display: inline-block;
-  margin: 0 0 $space-small;
-}
-.journal-index-summary {
-  @extend .t-18;
-}
-.journal-index-link {
-  @extend .t-24;
-  @extend .t-bold;
-}
-
-.journal-hero-img {
-  margin: 0 0 $space-large;
-}
-
-.journal-author-img {
-  margin: 0 0 $space-small;
-}
-.journal-author-name {
-  @extend .t-18;
-  @extend .t-bold;
-}
-.journal-author-info {
-  @extend .t-18;
-}
-
-.journal-post-header {
-  margin: 0 0 $space-large;
-}
-.journal-post-title  {
-  @extend .t-72;
-  line-height: 1.1;
-  margin: 0 0 $space-medium;
-}
-.journal-post-date {
-  @extend .t-label;
-  @extend .t-14;
-}
-
-.journal-post-body {
-  blockquote {
-    background: $color-black-100;
-    margin: $space-medium 0;
-    padding: $space-medium;
-    p {    
-      @extend .t-18;
-      font-style: normal;
-      margin: 0;
-    }
-  }
-  p + h1, p + h2, p + h3, p + h4, p + h5, p + h6 {
-    margin-top: $space-medium;
-  }
-  ul, ol {
-    @extend .list;
-    @extend .list-numbered;
-    li {
-      @extend .list-ele;
-
-    }
-  }
-}
-
-@supports (height: 100vh) { 
-  .journal {   
-    background: linear-gradient(to right top, #0089f2 50%, $color-black-100 50%);
-    background-size: 100% calc(100% - 100vh + 124px);
-    background-position: 120px 0;
-    background-repeat: no-repeat;
-    &:before{
-      content:'';
-      position: fixed;
-      top: 5px;
-      bottom: 0;
-      width: 100%;
-      z-index: -1;
-      background: $color-black-10;
-    }
-  }
-  .journal_index {
-    background: $color-black-10;
-    &:before {
-      display: none;
-    }
-  }
-}
-
-// Themes
-  .theme-blue {
-    background: $color-blue;
-    .site-header {
-      background: $color-blue-d-x3;
-      box-shadow: 0 0 0 $color-blue-d-x3;
-      &:hover {
-        @media only screen and (min-width: $mq-tablet) {
-          background: $color-blue-d-x2;
-          box-shadow: 0 10px 0 $color-blue-d-x3;
-          .site-header-menu-trigger-icon {
-            background: $color-blue-l-x3;
-          }
-        }
-      }
-    }
-    .site-hero {
-      background: $color-blue-d-x1;
-    }
-    h1, h2, h3, h4 {
-      color: darken($color-blue,30%);
-    }
-    p {
-      color: darken($color-blue,20%);
-    }
-    .form-fieldset {
-      &:hover {
-        .form-label {
-          color: $color-white;
-        }
-        .form-input--text {
-          background: $color-form-input;
-        }
-      }
-    }
-    .form-label {
-      color: lighten($color-blue, 30%);
-      @include transition;
-    }
-    .form-input--text {
-      background: $color-form-input;
-      &:focus {
-        background: $color-form-input;
-      }
-    }
-    .form-input--checkbox {
-      background: $color-blue-d-x1;
-      &:checked {
-        box-shadow: inset 4px 4px 0 darken($color-blue, 7%), inset -4px -4px 0 darken($color-blue, 7%);
-        background: $color-white;
-        & + label {
-          color: $color-white;
-        }
-      }
-      &:hover {
-        box-shadow: inset 4px 4px 0 darken($color-blue, 7%), inset -4px -4px 0 darken($color-blue, 7%);
-        background: lighten($color-blue,30%);
-        & + label {
-          color: lighten($color-blue,30%);
-        }
-        &:checked {
-          box-shadow: inset 4px 4px 0 darken($color-blue, 7%), inset -4px -4px 0 darken($color-blue, 7%);
-          background: $color-white;
-          & + label {
-            color: $color-white;
-          }
-        }
-      }
-    }
-    .form-input--checkbox-label {
-      color: $color-white;
-      cursor: pointer;
-      &:hover {
-        color: lighten($color-blue, 30%);
-      }
-    }
-    input.form-input--text::placeholder {
-      color: darken($color-blue,20%);
-    }
-    .form-textarea {
-      background: $color-blue-d-x1;
-      &:hover, &:focus {
-        background: darken($color-blue, 7%);
-      }
-    }
-    .cta-underline {
-      &:before {
-        background: $color-blue-l-x2;
-      }
-    }
-  }
-
-// Contact Pages
-  .contact_index {
-    @extend .theme-blue;
-  }
-
 // Site Header
+  header {width: 100%;}
   .site-header {
-    background: darken($color-black-400,5%);
-    height: 80px;
-    left: 0;
     padding: $space-small;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    @include flexbox;
-    align-items: center;
-    justify-content: space-between;
-    z-index: 10000000;
-    @include transition($type:box-shadow);
-    @media only screen and (min-width: $mq-tablet) {
-      box-shadow: 0 0 0 darken($color-black-400,4%);
-      height: 125px;
-      width: 100vh;
-      @include rotate(-90);
-      justify-content: flex-end;
-      top: 100%;
-      transform-origin: top left;
-      .site-header-logo-svg {
-        top: 0;
-        position: relative;
-        @include transition($type:top);
-        box-shadow: 0 0 0 $color-tp-black-20;
-      }
-      .site-header-breadcrumbs-text {
-        top: 0;
-        position: relative;
-        @include transition;
-      }
-    }
-    &:hover {
-      @media only screen and (min-width: $mq-tablet) {
-        background: darken($color-black-400,4%);
-        box-shadow: 0 10px 0 darken($color-black-400,4%);
-        .site-header-logo-svg {
-          top: -2px;
-          box-shadow: 8px 8px 0 $color-tp-black-20;
-        }
-        .site-header-breadcrumbs-text {
-          top: -2px;
-        }
-        .site-header-menu-trigger-icon {
-          background: $color-blue;
-          &:before {
-            width: 80%;
-          }
-          &:after {
-            width: 60%;
-          }
-        }
-      }
-    }
+    position: absolute;
+    z-index: 10000;
   }
   .site-header-logo {
-    order: 1;
-    width: 33.3%;
-    position: relative;
-    a {
-      border-bottom: 0px;
-      display: block;
-    }
-    img {
-      width: 60px;
-    }
-    @media only screen and (min-width: $mq-tablet) {
-      order: 3;
-      text-align: right;
-      width: 50%;
-      @include transition;
-      img {
-        transform: rotate(90deg);
-        width: 80px;
-      }
-    }
-  }
-  .site-header-logo-svg {
-    width: 120px;
-  }
-  .site-header-menu-trigger {
-    cursor: pointer;
-    height: 100%;
-    text-align: right;
-    order: 2;
-    width: 33.3%;
-    @include transition($type: width);
-    @include flexbox;
     align-items: center;
-    justify-content: flex-end;
-    z-index: 100000000;
-    @media only screen and (min-width: $mq-tablet) {
-      align-items: center;
-      justify-content: center;
-      @include absolute-center;
-    }
+    background: $color-white;
+    @include flexbox;
+    height: 90px;
+    justify-content: center;
+    padding: $space-small;
+    width: 90px;
   }
-  .site-header-menu-trigger-icon {
-    margin: 0;
-    width: 27px;
-    @media only screen and (min-width: $mq-tablet) {
-      margin: 0 auto;
-      @include rotate(90);
-      transform-origin: center center;
-    }
-  }
-  .site-header-breadcrumbs {
-    display: none;
-    order: 3;
-    width: 33.3%;
-    @media only screen and (min-width: $mq-tablet) {
-      display: block;
-      order: 1;
-      width: 50%;
-      @include transition($type: top);
-    }
-  }
-  .site-header-breadcrumbs-text {
-    @extend .t-14;
-    @extend .t-label;
-    color: $color-black-100;
-    white-space: nowrap;
+  .site-header-logo-text {
+    color: $color-black;
+    @include font-size(16);
+    line-height: 1.1;
   }
 
+// Site Footer
+  .site-footer {
+    margin-top: -5rem;
+    position: relative;
+    z-index: 1000;
+    @media only screen and (min-width: $mq-tablet) {
+      margin-top: -3.5rem;
+      padding: 0;
+    }
+    & p {
+      color: rgba(255,255,255,0.4);
+      @extend .t-16;
+      margin: 0;
+    }
+  }
 // Site Nav
   .site-nav {
     background: $color-white;
@@ -1104,270 +143,93 @@
 
 // Site Content
   .site-content {
-    padding: 80px 0 0 0;
-    position: relative;
-    width: 100%;
-    @media only screen and (min-width: $mq-tablet) {
-      padding: 0 0 0 125px;
-    }
-    &:before {
-      background: rgba(247,247,247,0.9);
-      content: "";
-      height: 100%;
-      left: 0;
-      opacity: 0;
-      position: fixed;
-      top: 0;
-      width: 100%;
-      z-index: -1;
-      @include transition($delay:400ms);
-    }
+
   }
 
-// Site Hero
-  .site-hero {
-    background: darken($color-black-400,2.5%);
-    padding: $space-large $space-small;
+// Site Blocks
+  .site-block {
+    padding: $space-x 0 $space-medium;
     position: relative;
+    z-index: 1;
+    @media only screen and (min-width: $mq-tablet) {
+      padding: $space-small 0;
+    }
+  }
+  .site-block--large {
+    padding: $space-large 0;
     @media only screen and (min-width: $mq-tablet) {
       padding: $space-xl 0;
     }
   }
-  .site-hero-tight {
-    @media only screen and (min-width: $mq-tablet) {
-      padding: $space-xl 0 0;
+  .site-block-hero {
+    @include flexbox;
+    align-items: flex-end;
+    min-height: 99vh;
+    z-index: 1000;
+    @media only screen and (min-width: $mq-desktop) {
+      align-items: center;
     }
   }
-  .site-hero-dark {
-    h1, h2, h3 {
-      color: $color-white;
-    }
-    p {
-      color: $color-tp-white-80;
-    }
-  }
-
-// Site Block
-  .site-block {
-    padding: $space-large $space-small;
-    @media only screen and (min-width: $mq-tablet) {
-      padding: $space-large 0;
-    }
-  }
-  .site-block-header {
-    margin: 0 0 $space-medium;
-    text-align: center;
-    @media only screen and (min-width: $mq-laptop) {
-      text-align: left;
-    }
-  }
-  .site-block-subheader {
-
-  }
-  .site-block-content {
-    margin: 0 0 $space-medium;
-  }
-
-// Content Block
-  .block-content {
-    margin: 0 0 $space-large 0;
-  }
-
-// Gigs
-  .gig-card {
+  .site-block-hero--front {
     width: 100%;
-  }
-  .gig-meta {
-    color: $color-black-200;
-    margin-bottom: $space-x;
-  }
-
-// Studio Services Shopify
-  header.site-services-header {
-    margin: 0 0 $space-medium;
-  }
-  .site-hero-img {
-    position: absolute;
     z-index: 100;
-    width: 375px;
-    display: none;
-    @media only screen and (min-width: $mq-laptop) {
-      display: block;
-      right: -80px;
-    }
-    @media only screen and (min-width: $mq-desktop) {
-      right: 0;
-    }
   }
-  .site-services-value {
-    background: url('../images/studio/services/forcesunite-value-bg.jpg') no-repeat center;
-    padding: $space-small $space-x;
-  }
-  .site-services-process {
-    position: relative;
-    &::after {
-      content: "";
-      background-image: url('../images/studio/services/forcesunite-process-bg.jpg');
-      background-repeat: no-repeat;
-      background-size: cover;
-      opacity: 0.1;
-      top: 0;
-      left: 0;
-      bottom: 0;
-      right: 0;
-      position: absolute;
-      z-index: -1;   
-      @media only screen and (min-width: $mq-phonelg) {
-        background-position: 0 23rem;
-        background-size: 45% auto;
-        opacity: 1;
-      }
-      @media only screen and (min-width: $mq-tablet) {
-        background-position: 0 24rem;
-      }
-      @media only screen and (min-width: $mq-laptop) {
-        background-position: 0 26rem;
-      }
-      @media only screen and (min-width: $mq-desktop) {
-        background-position: 0 28rem;
-      }
-    }
-  }
-  .site-services-value-block {
-    background: $color-black-0;
-
-    & > * {
-      padding: $space-large;
-    }
-
-    h2, h3, h4 {
-      color: $color-black-400;
-      margin: 0;
-    }
-    p {
-      color: $color-black-400;
-    }
-  }
-  .site-services-value-block-top {
-    border-bottom: 1px solid $color-black-100;
-  }
-  .site-services-bg-blue {
-    background: #8CBDFF;
-
-    h2, h3, h4, p {
-      color: #1B4987
-    }
-  }
-  .site-services-shopify-block {
-    background: #73AFFF;
-    padding: $space-small;
-    @include flexbox;
-    // align-items: flex-end;
-    justify-content: flex-end;
-    flex-direction: column;
-    @include flexwrap(wrap);
-    min-height: 200px;
-    margin: 0 0 $space-small 0;
-    @media only screen and (min-width: $mq-tablet) {
-      min-height: 250px;
-    }
-  }
-  .site-services-shopify-block-letters {
-    @extend .t-64;
-    color: #1B4987;
-    width: 100%;
-  }
-  p.site-services-shopify-block-desc {
-    @extend .t-24;
-    @extend .t-bold;
-    color: $color-white;
-    margin: 0;
-  }
-  .site-services-team-block {
-    background: $color-white;
-    padding: $space-small;
-    @include flexbox;
-    @include flexwrap(wrap);
-    flex-direction: column;
-    height: auto;
-    min-height: 300px;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    margin: 0 auto $space-medium auto;
-    @media only screen and (min-width: $mq-phonelg) {
-      width: 100%;
-      height: auto;
-    }
-    @media only screen and (min-width: $mq-laptop) {
-    }
-    @media only screen and (min-width: $mq-desktop) {
-      height: 100%;
-      padding: $space-medium;
-    }
-  }
-  .site-services-bg-skyblue {
-    background: #EAF3FF;
-
-    h2, h3, h4, p {
-      color: #1B4987
-    }
-  }
-  .site-services-team-block-photo {
-    height: 140px;
-    width: 140px;
-    @include flexbox;
-    @include flexwrap(wrap);
-    justify-content: center;
-    text-align: center;
-    border-radius: 120px;
+  .site-block-hero--back {
+    height: 100%;
+    left: 0;
     overflow: hidden;
-    margin: 0 0 $space-small 0;
-    .site-services-team-block-photo-img {
-      width: 100%;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    @media only screen and (min-width: $mq-desktop) {
+      height: 110%;
+    }
+    & > * {
+      height: 100%;
     }
   }
-  h3.site-services-team-block-name {
-    @extend .t-24;
-    color: $color-black;
-    margin: 0;
+  .site-block-hero-img {
+    @include flexbox;
+    object-fit: cover;
+    height: 100%;
+    position: relative;
+    width: 100%;
+    opacity: 0.4;
+    @media only screen and (min-width: $mq-desktop) {
+      opacity: 1;
+    }
   }
-  p.site-services-team-block-title {
-    @extend .t-16;
-    @extend .t-bold;
-    color: $color-black-300;
-  }
-  a.site-services-team-block-link, a.site-services-work-block-link {
-    @extend .t-16;
-    @extend .t-bold;
-  }
-  .site-services-white {
-    background: #FAFCFF;
-
-    h2, h3, h4, p {
+  .site-block-content-white {
+    background: $color-white;
+    h1, h2, h3, h4, h5, h6 {
       color: $color-black;
     }
+    p, li {
+      color: $color-black-400;
+    }
   }
-  .site-serices-work-block {
-    margin: 0 0 $space-large;
+  .site-block-content-blue {
+    background: $color-blue;
+    h1, h2, h3, h4, h5, h6 {
+      color: $color-white;
+    }
+    p, li, label {
+      color: #B2D3FF;
+    }
+    .form-input-text {
+      background: #B2D3FF;
+      color: #0A3773;
+    }
+    .form-fieldset:hover {
+      .form-label {
+        color: $color-white;
+      }
+      .form-input-text {
+        background: $color-white;
+      }
+    }
   }
-  .site-serices-work-block-img {
+  .site-content-img {
+    margin: 0 0 $space-medium 0;
     width: 100%;
-    margin: 0 0 $space-small;
-  }
-  h3.site-serices-work-block-title {
-    margin: 0 0 $space-x -2px;
-  }
-  p.site-serices-work-block-subtitle {
-    color: $color-black-300;
-    @extend .t-16;
-    margin: 0;
-  }
-  .site-services-work-column-pullup {
-    @media only screen and (min-width: $mq-tablet) {
-      margin-top: -5rem;
-    }
-    @media only screen and (min-width: $mq-laptop) {
-      margin-top: -10rem;
-    }
   }

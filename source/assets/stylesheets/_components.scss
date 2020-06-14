@@ -1,0 +1,188 @@
+// Animations
+  @keyframes marquee{
+    0%{transform:translateX(-100%)}
+    100%{transform:translateX(-200%)}
+  }
+
+// Buttons
+  .btn {
+    border: 0;
+    border-radius: 0;
+    @extend .t-bold;
+    @extend .t-18;
+    display: inline-block;
+    margin: 0;
+    padding: $space-small $space-medium;
+    @include transition;
+    text-align: center;
+    width: 100%;
+    white-space: nowrap;
+    @media only screen and (min-width: $mq-phonelg) {
+      margin: 0;
+      width: auto;
+    }
+    & + .btn {
+      margin-top: $space-small;
+      @media only screen and (min-width: $mq-phonelg) {
+        margin-left: $space-small;
+        margin-top: 0;
+      }
+    }
+  }
+  .btn-primary {
+    @extend .btn;
+    background: $color-white;
+    color: $color-black-400;
+    &:hover {
+      background: $color-blue;
+      color: $color-white;
+    }
+  }
+  .btn-secondary {
+    @extend .btn;
+    background: $color-white;
+    color: $color-blue;
+    &:hover {
+      background: $color-black;
+      color: $color-white;
+    }
+  }
+  .btn-blue {
+    @extend .btn;
+    background: $color-blue;
+    color: $color-white;
+    &:hover {
+      background: $color-blue-d-x1;
+      color: $color-white;
+    }
+  }
+  .btn-white {
+    @extend .btn;
+    background: $color-white;
+    color: $color-black;
+    &:hover {
+      background: $color-black-100;
+      color: $color-black;
+    }
+  }
+
+// CTAs
+  .cta-underline {
+    @extend .t-24;
+    color: $color-white;
+    display: inline-block;
+    position: relative;
+    z-index: 2;
+    &:before {
+      background: $color-blue;
+      bottom: 0;
+      content:"";
+      height: 40%;
+      left: -5px;
+      position: absolute;
+      width: 106%;
+      z-index: -1;
+      @include transition;
+    }
+    &:hover {
+      color: $color-tp-white-90;
+      &:before {
+        height: 100%;
+        width: 106%;
+      }
+    }
+  }
+  .cta-underline-dark {
+    @extend .cta-underline;
+    color: $color-blue;
+    &:before {
+      background: $color-black-100;
+    }
+    &:hover {
+      color: $color-white;
+      &:before {
+        background: $color-blue;
+      }
+    }
+  }
+
+// Lists
+  .list-bordered {
+    border-top: 4px solid $color-black;
+    border-bottom: 4px solid $color-black;
+    list-style: none;
+    padding: 0;
+    margin: $space-small 0;
+    width: 100%;
+    & > .list-bordered-item {
+      @extend .t-16;
+      border-bottom: 2px solid $color-black-400;
+      margin: 0;
+      padding: $space-small 0;
+      &:last-child {
+        border-bottom: 0;
+      }
+    }
+  }
+
+// Forms
+  .form {
+    margin: $space-small 0;
+    width: 100%;
+  }
+  .form-fieldset {
+    border: 0;
+    margin: 0 0 $space-small 0;
+  }
+  .form-label {
+    @extend .t-18;
+    margin: 0 0 $space-x 0;
+    @include transition;
+  }
+  .form-input-text {
+    background: $color-white;
+    border: 0;
+    @extend .t-18;
+    @extend .t-bold;
+    height: 60px;
+    outline: 0;
+    padding: $space-x $space-small;
+    width: 100%;
+    @include transition;
+  }
+  .form-input-submit {
+    @extend .btn-secondary;
+    background: $color-white;
+    @include transition;
+  }
+
+// Marquee
+  .marquee {
+    padding: $space-medium 0;
+    width: 100%;
+  }
+  .marquee-header {
+    @extend .t-16;
+    color: $color-gray;
+    position: relative;
+    &:after {
+      background: $color-white;
+      content: "";
+      height: 3px;
+      margin-left: $space-small;
+      position: absolute;
+      width: 100%;
+      @include vertical-center;
+    }
+  }
+  .marquee-content {
+    border-bottom: 3px solid $color-white;
+    padding: $space-x 0 $space-small 0;
+    width: 300%;
+    span {
+      display: block;
+      @extend .t-48;
+      @include animation(marquee 60s linear infinite forwards);
+      white-space: nowrap;
+    } 
+  }

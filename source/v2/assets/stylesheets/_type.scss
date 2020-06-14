@@ -16,7 +16,7 @@
       font-family: $font-primary;
       font-size: 1em;
       font-weight: 700;
-      line-height: 1.25;
+      line-height: 1.4;
       color: $color-black-10;
     }
 
@@ -171,6 +171,9 @@
       font-weight: 700;
     }
     .t-label {
+      @extend .t-bold;
+      letter-spacing: .3rem;
+      text-transform: uppercase;
     }
   
   // Text Spacing
@@ -245,11 +248,11 @@
     }
 
     h1 {
-      @extend .t-64;
+      @extend .t-48;
     }
 
     h2 {
-      @extend .t-48;
+      @extend .t-36;
     }
 
     h3 {
@@ -258,10 +261,6 @@
 
     h4 {
       @extend .t-24;
-    }
-
-    .headline {
-      @extend .t-64;
     }
 
     .subheader {
