@@ -4,8 +4,17 @@
 @import "variables";
 @import "mixins";
 @import "type";
-@import "components";
 @import "system";
 @import "skeleton";
 @import "case";
 @import "blog";
+
+// Global
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background: $color-black-400;
+    height: 100%;
+    overflow-x: hidden;
+  }
