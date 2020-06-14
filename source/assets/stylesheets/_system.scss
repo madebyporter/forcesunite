@@ -165,13 +165,15 @@
     @include flexbox;
     align-items: flex-end;
     min-height: 99vh;
-    overflow: hidden;
+    // overflow-x: hidden;
     z-index: 1000;
     @media only screen and (min-width: $mq-desktop) {
       align-items: center;
     }
   }
   .site-block-hero--front {
+    overflow-x: hidden;
+    overflow-y: visible;
     width: 100%;
     z-index: 100;
     .site-block-hero-header {
@@ -183,7 +185,7 @@
   .site-block-hero--back {
     height: 100%;
     left: 0;
-    overflow: hidden;
+    // overflow-x: hidden;
     position: absolute;
     top: 0;
     width: 100%;
