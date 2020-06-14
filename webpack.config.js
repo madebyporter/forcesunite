@@ -1,21 +1,45 @@
 // webpack.config.js
-var webpack = require('webpack');
+
+var path = require('path')
+var webpack = require('webpack')
+var ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 module.exports = {
   entry: {
-    all: [
-      './source/assets/javascripts/jquery.js',
-      './source/assets/javascripts/isotope.pkgd.min.js',
-      './source/assets/javascripts/all.js',
+    site: ['./assets/javascripts/all.js', './assets/stylesheets/site.css.scss']
+  },
+  output: {
+    filename: 'assets/javascripts/[name].js',
+    path: path.resolve(__dirname, '.tmp/dist')
+  },
+
+  module: {
+    rules: [
+      {
+        test: /\.scss$/,
+        use: ExtractTextPlugin.extract({
+          use: [
+            'css-loader',
+            {
+              loader: 'postcss-loader',
+              options: {
+                plugins: function() {
+                  return [
+                    require('autoprefixer'),
+                    require('postcss-flexbugs-fixes')
+                  ]
+                }
+              }
+            },
+            'sass-loader'
+          ]
+        })
+      }
     ]
   },
-
-  resolve: {
-    root: __dirname + '/source/javascripts',
-  },
-
-  output: {
-    path: __dirname + '/.tmp/dist',
-    filename: 'javascripts/index.js',
-  },
-};
+  plugins: [
+    new ExtractTextPlugin({
+      filename: 'assets/stylesheets/[name].css'
+    })
+  ]
+}

@@ -1,6 +1,4 @@
 //= require_tree .
-
-
 var js = js || {},
   body = document.getElementsByTagName('body')[0];
 
@@ -8,6 +6,7 @@ var js = js || {},
 js.main = {
   init: function () {
     this.externalLinks();
+    this.sal();
   },
   externalLinks: function() {
     function externalLinks() {
@@ -19,6 +18,9 @@ js.main = {
       }
     }
     externalLinks();
+  },
+  sal: function(){
+    sal();
   },
 };
 document.addEventListener('DOMContentLoaded', function(){
