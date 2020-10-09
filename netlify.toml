@@ -1,0 +1,7 @@
+[[redirects]]
+ from = "https://www.forcesunite.us/gigs"
+ to = "https://www.notion.so/dcbbb6dbc7ed4f4ea6a643ef4565bb2c?v=654b95b29f304e838c5086f8e3be434f:splat"
+ status = 200
+ force = true # COMMENT: ensure that we always redirect
+ headers = {X-From = "Netlify"}
+ signed = "API_SIGNATURE_TOKEN"
