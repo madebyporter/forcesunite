@@ -58,6 +58,9 @@ activate :directory_indexes
 
 # Build-specific configuration
 configure :build do
+
+  ignore "_redirects"
+  
   # Minify CSS on build
   activate :minify_css
 
