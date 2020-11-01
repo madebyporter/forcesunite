@@ -123,6 +123,13 @@
         border-bottom: 0;
       }
     }
+    ul {
+      margin: $space-small 0;
+      li {
+        @extend .t-14;
+        font-weight: 400;
+      }
+    }
   }
 
 // Forms

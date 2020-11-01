@@ -155,6 +155,12 @@
       padding: $space-small 0;
     }
   }
+  .site-block--medium {
+    padding: $space-medium 0;
+    @media only screen and (min-width: $mq-tablet) {
+      padding: $space-large 0;
+    }
+  }
   .site-block--large {
     padding: $space-large 0;
     @media only screen and (min-width: $mq-tablet) {
