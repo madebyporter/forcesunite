@@ -25,6 +25,7 @@ html
     header.site-header
       = link_to "/", :class => "site-header-logo" do
         span.site-header-logo-text Forces Unite
+      h1.site-header--title #{current_page.data.pagename}
     main.site-content
       == yield
     footer.site-footer data-sal="slide-up" data-sal-delay="600" data-sal-duration="1000"
