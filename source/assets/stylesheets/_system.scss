@@ -24,6 +24,15 @@
     padding: $space-small;
     position: absolute;
     z-index: 10000;
+    display: flex;
+    align-items: center;
+  }
+  .site-header--title {
+    @extend .t-28;
+    margin: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
   }
   .site-header-logo {
     align-items: center;
@@ -32,6 +41,7 @@
     height: 90px;
     justify-content: center;
     padding: $space-small;
+    margin: 0 $space-small 0 0;
     width: 90px;
   }
   .site-header-logo-text {
@@ -155,6 +165,12 @@
       padding: $space-small 0;
     }
   }
+  .site-block--medium {
+    padding: $space-medium 0;
+    @media only screen and (min-width: $mq-tablet) {
+      padding: $space-large 0;
+    }
+  }
   .site-block--large {
     padding: $space-large 0;
     @media only screen and (min-width: $mq-tablet) {
@@ -164,12 +180,13 @@
   .site-block-hero {
     @include flexbox;
     align-items: flex-end;
-    min-height: 99vh;
+    min-height: 650px;
     overflow: hidden;
     z-index: 1000;
-    @media only screen and (min-width: $mq-desktop) {
+    @media only screen and (min-width: $mq-laptop) {
       align-items: center;
       overflow: visible;
+      padding-top: $space-xl;
     }
   }
   .site-block-hero--front {
@@ -190,7 +207,7 @@
     position: absolute;
     top: 0;
     width: 100%;
-    @media only screen and (min-width: $mq-desktop) {
+    @media only screen and (min-width: $mq-laptop) {
       height: 110%;
     }
     & > * {
@@ -204,12 +221,21 @@
     position: relative;
     width: 100%;
     opacity: 0.4;
-    @media only screen and (min-width: $mq-desktop) {
+    @media only screen and (min-width: $mq-laptop) {
       opacity: 1;
     }
   }
   .site-block-content-white {
     background: $color-white;
+    h1, h2, h3, h4, h5, h6 {
+      color: $color-black;
+    }
+    p, li {
+      color: $color-black-400;
+    }
+  }
+  .site-block-content-grey-light {
+    background: $color-tp-white-95;
     h1, h2, h3, h4, h5, h6 {
       color: $color-black;
     }
