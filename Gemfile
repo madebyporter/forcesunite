@@ -11,11 +11,11 @@ gem 'wdm', '~> 0.1.0', platforms: [:mswin, :mingw]
 gem 'tzinfo-data', platforms: [:mswin, :mingw]
 
 # Middleman Gems
-gem 'middleman-sprockets', '>= 4.0.0'
-gem 'middleman', '>= 4.0.0'
+gem 'middleman-sprockets', '>= 4.1.1'
+gem 'middleman', '>= 4.4.0'
 gem 'middleman-livereload'
-gem "middleman-blog", "~> 4.0"
+gem "middleman-blog", "~> 4.0", ">= 4.0.3"
 gem "builder", "~> 3.0"
-gem "nokogiri", ">= 1.10.8"
+gem "nokogiri", ">= 1.13.9"
 gem "contentful_middleman"
 gem 'middleman-dotenv'
