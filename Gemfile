@@ -12,10 +12,10 @@ gem 'tzinfo-data', platforms: [:mswin, :mingw]
 
 # Middleman Gems
 gem 'middleman-sprockets', '>= 4.0.0'
-gem 'middleman', '>= 4.0.0'
+gem 'middleman', '>= 4.4.2'
 gem 'middleman-livereload'
 gem "middleman-blog", "~> 4.0"
 gem "builder", "~> 3.0"
-gem "nokogiri", ">= 1.10.8"
+gem "nokogiri", ">= 1.15.6"
 gem "contentful_middleman"
 gem 'middleman-dotenv'
