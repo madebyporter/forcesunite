@@ -208,6 +208,10 @@
       color: $color-black-200;
       margin: 0 0 $space-small 0;
     }
+    li {
+      color: $color-black-200;
+      @extend .t-book;
+    }
     .small {
       @extend .t-18;
     }
